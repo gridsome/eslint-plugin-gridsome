@@ -1,0 +1,60 @@
+{
+  "name": "eslint-plugin-gridsome",
+  "version": "1.0.0",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "vue",
+    "gridsome"
+  ],
+  "homepage": "https://github.com/gridsome/eslint-plugin-gridsome",
+  "bugs": {
+    "url": "https://github.com/gridsome/eslint-plugin-gridsome/issues"
+  },
+  "license": "MIT",
+  "author": "tyankatsu <frips.ryilsufupe+dev@gmail.com> (https://tyankatsu.hatenablog.com/)",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib",
+    "package.json"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gridsome/eslint-plugin-gridsome.git"
+  },
+  "scripts": {
+    "test": "mocha tests/lib/rules/*.js",
+    "lint": "eslint ./fixture --ext .vue  --rulesdir lib/rules",
+    "log": "eslint log/tests/* --rulesdir log/rules",
+    "git-cz": "git-cz",
+    "commit": "run-s format git-cz",
+    "format": "fixpack",
+    "release:major": "changelog -M -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version major -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
+    "release:minor": "changelog -m -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version minor -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
+    "release:patch": "changelog -p -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version patch -m 'feat: :tada: updated version' && git push origin && git push origin --tags"
+  },
+  "config": {
+    "changelog": "https://github.com/gridsome/eslint-plugin-gridsome"
+  },
+  "dependencies": {
+    "prettier": "^1.15.3"
+  },
+  "devDependencies": {
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "fixpack": "^2.3.1",
+    "generate-changelog": "^1.7.1",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.5",
+    "vue-eslint-parser": "^3.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
