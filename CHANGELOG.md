@@ -1,3 +1,9 @@
+#### 1.0.1 (2018-12-11)
+
+##### Documentation Changes
+
+*  fix add ([69845049](https://github.com/gridsome/eslint-plugin-gridsome/commit/69845049bfd139992e1daf4a149bcc56eba639b4))
+
 ## 1.0.0 (2018-12-06)
 
 ##### Documentation Changes
