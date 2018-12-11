@@ -10,7 +10,7 @@ $ yarn test
 $ yarn lint
 
 # if you see fix
-$ yarn lint
+$ yarn lint --fix
 ```
 
 ## commit
