@@ -1,8 +1,20 @@
+---
+to: log/tests/log.vue
+---
 <template>
-  <div>aaaa</div>
+  <div class="log">
+    <p>this is text</p>
+    <p>{{ text }}</p>
+  </div>
 </template>
 <script>
-    const script = 111;
+  export default {
+    data() {
+      return {
+        text: 'this is data'
+      }
+    }
+  }
 </script>
 
 <page-query>
