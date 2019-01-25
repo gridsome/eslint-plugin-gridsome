@@ -27,7 +27,9 @@
   "scripts": {
     "test": "mocha tests/lib/rules/*.js",
     "lint": "eslint ./tests/fixture --ext .vue  --rulesdir lib/rules",
-    "log": "eslint log/tests/* --rulesdir log/rules",
+    "log:lint": "eslint log/tests/* --rulesdir log/rules",
+    "log:print": "run-s log:lint > log/log.json",
+    "log": "npm run log:print --silent",
     "format": "fixpack",
     "lint-staged": "lint-staged",
     "precommit": "run-s format lint-staged",
@@ -75,7 +77,8 @@
       ]
     },
     "ignore": [
-      "node_modules/**/*"
+      "node_modules/**/*",
+      "log/**/*"
     ]
   }
 }
