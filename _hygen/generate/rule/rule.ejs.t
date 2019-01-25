@@ -18,14 +18,14 @@ to: lib/rules/<%= name %>.js
 
 module.exports = {
   meta: {
-    type: '',
+    type: "",
     docs: {
       description: "<%= description %>",
-      category: '',
-      suggestion: '',
-      layout: '',
+      category: "",
+      recommended: false,
+      url: "<%= h.REPO_URL() %>/blob/master/docs/rules/<%= name %>.md",
     },
-    fixable: '',
+    fixable: "",
     schema: [],
     deprecated: false,
     replacedBy: []
