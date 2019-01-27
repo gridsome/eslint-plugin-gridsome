@@ -126,3 +126,4 @@ typings/
 
 .node-version
 /log
+.vscode
