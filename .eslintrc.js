@@ -1,12 +1,18 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
+    es6: true
   },
-  extends: ["plugin:vue/recommended", "prettier"],
+  extends: ["eslint:recommended", "plugin:node/recommended", "prettier"],
   plugins: ["prettier"],
   rules: {
     "prettier/prettier": "error",
-    "format-query-block": 2,
+    "node/exports-style": ["error", "module.exports"],
+    "node/prefer-global/buffer": ["error", "always"],
+    "node/prefer-global/console": ["error", "always"],
+    "node/prefer-global/process": ["error", "always"],
+    "node/prefer-global/url-search-params": ["error", "always"],
+    "node/prefer-global/url": ["error", "always"]
   }
 };
