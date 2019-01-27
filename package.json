@@ -12,7 +12,7 @@
     "url": "https://github.com/gridsome/eslint-plugin-gridsome/issues"
   },
   "license": "MIT",
-  "author": "tyankatsu <frips.ryilsufupe+dev@gmail.com> (https://tyankatsu.hatenablog.com/)",
+  "author": "tyankatsu <frips.ryilsufupe+dev@gmail.com> (https://tyankatsu.netlify.com/)",
   "files": [
     "LICENSE",
     "README.md",
@@ -25,12 +25,18 @@
     "url": "git+https://github.com/gridsome/eslint-plugin-gridsome.git"
   },
   "scripts": {
-    "test": "mocha tests/lib/rules/*.js",
-    "lint": "eslint ./fixture --ext .vue  --rulesdir lib/rules",
-    "log": "eslint log/tests/* --rulesdir log/rules",
-    "git-cz": "git-cz",
-    "commit": "run-s format git-cz",
+    "test": "mocha tests/lib/rules/*.js --watch",
+    "lint": "eslint ./tests/fixture --ext .vue  --rulesdir lib/rules",
+    "_log:lint": "eslint log/tests/* --rulesdir log/rules",
+    "_log:print": "run-s _log:lint > log/log.json",
+    "log": "npm run _log:print --silent",
     "format": "fixpack",
+    "lint-staged": "lint-staged",
+    "precommit": "run-s format lint-staged",
+    "commit": "git-cz",
+    "make:rule": "hygen generate rule",
+    "make:log": "hygen generate log",
+    "update-readme": "node tools/update-readme/index.js",
     "release:major": "changelog -M -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version major -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
     "release:minor": "changelog -m -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version minor -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
     "release:patch": "changelog -p -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version patch -m 'feat: :tada: updated version' && git push origin && git push origin --tags"
@@ -46,15 +52,39 @@
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-vue": "^4.7.1",
     "fixpack": "^2.3.1",
     "generate-changelog": "^1.7.1",
+    "hygen": "^2.1.1",
+    "lint-staged": "^8.1.0",
     "mocha": "^5.2.0",
     "npm-run-all": "^4.1.5",
-    "vue-eslint-parser": "^3.3.0"
+    "vue-eslint-parser": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=8.3.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "prettier --write",
+        "eslint --fix",
+        "git add"
+      ],
+      "*.md": [
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "node_modules/**/*",
+      "log/**/*",
+      "tools/update-readme/_readme/*"
+    ]
   }
 }

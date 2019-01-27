@@ -1,6 +1,7 @@
 <template>
-  <div>aaaa</div>
-</template>
+        <div>aaaa</div>
+    </template>
+    
 <script>
 const script = 111;
 </script>
@@ -10,7 +11,7 @@ query Blog {
   allWordPressPost(limit: 5) {
     edges {
       node {
-        id
+              id
         title
       }
     }
