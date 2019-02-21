@@ -1,3 +1,17 @@
+### 1.1.0 (2019-02-21)
+
+##### Chores
+
+* **package.json:**  Change author homepage ([085578eb](https://github.com/gridsome/eslint-plugin-gridsome/commit/085578eb5dcbeea752ebd72fff94ce1a74331de3))
+
+##### Documentation Changes
+
+*  Update rule description format-query ([244bbd1b](https://github.com/gridsome/eslint-plugin-gridsome/commit/244bbd1b0520d8a58b5482a2139797890b8974d8))
+
+##### Refactors
+
+*  Clean code ([8c2d5b4e](https://github.com/gridsome/eslint-plugin-gridsome/commit/8c2d5b4e6c0339a1f6d1e6b5efb9ec9182972192))
+
 #### 1.0.1 (2018-12-11)
 
 ##### Documentation Changes
