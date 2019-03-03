@@ -1,3 +1,9 @@
+#### 1.1.1 (2019-03-03)
+
+##### Chores
+
+* **package.json:**  don’t watch default test command ([089b0f14](https://github.com/gridsome/eslint-plugin-gridsome/commit/089b0f1410b4ed1d844359d4aea2b1d81d3fb6d5))
+
 ### 1.1.0 (2019-02-21)
 
 ##### Chores
