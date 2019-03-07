@@ -1,12 +1,12 @@
 # Setup
 
-## Make files
+## Generate files
 
 if you want to create a new rule, use this command.  
 This command use [Hygen](https://www.hygen.io/).
 
 ```bash
-$ yarn make:rule
+$ yarn gen:rule
 ```
 
 ## Development new rule
@@ -21,7 +21,7 @@ This folder is already added that gitignore.
 AST is outputed to `log/log.json`.
 
 ```bash
-$ yarn make:log
+$ yarn gen:log
 $ yarn log
 ```
 
