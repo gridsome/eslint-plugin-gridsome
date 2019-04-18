@@ -11,7 +11,7 @@ query Blog {
   allWordPressPost(limit: 5) {
     edges {
       node {
-              id
+        id
         title
       }
     }
