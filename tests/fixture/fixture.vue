@@ -1,14 +1,18 @@
 <template>
-        <div>aaaa</div>
-    </template>
-    
+  <div>
+    <g-image src="hoge.jpg" />
+    <g-image :src="hoge.jpg" />
+  </div>
+</template>
+
+
 <script>
 const script = 111;
 </script>
 
 <page-query>
 query Blog {
-  allWordPressPost(limit: 5) {
+          allWordPressPost(limit: 5) {
     edges {
       node {
               id
