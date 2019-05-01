@@ -2,6 +2,7 @@
   <div>
     <g-image src="hoge.jpg" />
     <g-image :src="hoge.jpg" />
+    <g-image width="500" />
   </div>
 </template>
 
