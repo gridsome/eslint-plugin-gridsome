@@ -6,6 +6,7 @@ module.exports = {
   },
   parser: "vue-eslint-parser",
   rules: {
-    "format-query-block": 2
+    "format-query-block": 2,
+    "require-g-image-src": 2
   }
 };
