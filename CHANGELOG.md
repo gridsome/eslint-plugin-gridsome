@@ -1,3 +1,13 @@
+#### 1.2.2 (2019-05-01)
+
+##### Documentation Changes
+
+*  Add explain configs ([8d74bede](https://github.com/gridsome/eslint-plugin-gridsome/commit/8d74bede9329a41b1bc789b49372bb59531c259f))
+
+##### Refactors
+
+*  Check prettier config in  query-block-format  ([#5](https://github.com/gridsome/eslint-plugin-gridsome/pull/5)) ([d659e273](https://github.com/gridsome/eslint-plugin-gridsome/commit/d659e273439bf243dc3343375f7f397280ee7d90))
+
 #### 1.2.1 (2019-05-01)
 
 ##### Documentation Changes
