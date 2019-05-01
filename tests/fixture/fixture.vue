@@ -3,6 +3,9 @@
     <g-image src="hoge.jpg" />
     <g-image :src="hoge.jpg" />
     <g-image width="500" />
+
+    <g-link :to="{ name: 'about' }" class="foo">link is here</g-link>
+    <g-link class="foo">link is here</g-link>
   </div>
 </template>
 
