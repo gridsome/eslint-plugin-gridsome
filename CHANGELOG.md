@@ -1,3 +1,13 @@
+#### 1.2.1 (2019-05-01)
+
+##### Documentation Changes
+
+*  Fix special characters ([#9](https://github.com/gridsome/eslint-plugin-gridsome/pull/9)) ([6ed5b982](https://github.com/gridsome/eslint-plugin-gridsome/commit/6ed5b982de2b4d87fcfa6ba449c0043102334fc6))
+
+##### New Features
+
+*  Add configs ([#11](https://github.com/gridsome/eslint-plugin-gridsome/pull/11)) ([0445ee15](https://github.com/gridsome/eslint-plugin-gridsome/commit/0445ee153b32b49401de3de6c88f5068957f8a5e))
+
 ### 1.2.0 (2019-05-01)
 
 ##### Build System / Dependencies
