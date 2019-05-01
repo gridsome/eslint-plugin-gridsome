@@ -1,3 +1,22 @@
+### 1.2.0 (2019-05-01)
+
+##### Build System / Dependencies
+
+*  Upgrade package version ([5ab35312](https://github.com/gridsome/eslint-plugin-gridsome/commit/5ab353125f3fd52b99bb436192fc431d866cbdfc))
+
+##### Chores
+
+*  remove fixpack to fix security warning ([ba57fe00](https://github.com/gridsome/eslint-plugin-gridsome/commit/ba57fe004b3ae00be972674ad1fd4c28f6cd99a0))
+
+##### Other Changes
+
+*  Add rule require-g-link-to ([#7](https://github.com/gridsome/eslint-plugin-gridsome/pull/7)) ([bd80a026](https://github.com/gridsome/eslint-plugin-gridsome/commit/bd80a0265b83aaad4fcce0c51cfa7e48838ce058))
+*  Add new rule `require-g-image-src` ([#6](https://github.com/gridsome/eslint-plugin-gridsome/pull/6)) ([fa05552b](https://github.com/gridsome/eslint-plugin-gridsome/commit/fa05552b97c638754b179e636df265fa4d9cef1a))
+
+##### Performance Improvements
+
+*  Rename npm scripts ([97048ef3](https://github.com/gridsome/eslint-plugin-gridsome/commit/97048ef370e3f1c284953663b006cf7393b319fb))
+
 #### 1.1.1 (2019-03-03)
 
 ##### Chores
