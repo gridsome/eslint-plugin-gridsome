@@ -1,4 +1,6 @@
-# eslint-plugin-gridsome
+<p align="center"><img width="143px" height="130px" src="./assets/logo/eslint-plugin-gridsome.svg" alt="ESLint plugin for Gridsome"></p>
+
+<h1 align="center">eslint-plugin-gridsome</h1>
 
 [![npm version](https://badge.fury.io/js/eslint-plugin-gridsome.svg)](https://badge.fury.io/js/eslint-plugin-gridsome)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -51,18 +53,18 @@ module.exports = {
 };
 ```
 
-## contributing
-
-Check [CONTRIBUTING.md](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/CONTRIBUTING.md).
-
 ## configs
 
 - [recommended](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/lib/configs/recommended.js)
+
+## contributing
+
+Check [CONTRIBUTING.md](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/CONTRIBUTING.md).
 
 ## Rules
 
 | Rule Name                                                                                                               | Description                                                                    |
 | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | [format-query-block](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/docs/rules/format-query-block.md)   | Format fix for `<page-query>` and `<static-query>` in .vue. Using Prettier API |
-| [require-g-image-src](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/docs/rules/require-g-image-src.md) | Require v-bind:src or src of <g-image> elements                                |
-| [require-g-link-to](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/docs/rules/require-g-link-to.md)     | Require v-bind:to or to of <g-link> elements                                   |
+| [require-g-image-src](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/docs/rules/require-g-image-src.md) | Require v-bind:src or src of `<g-image>` elements                              |
+| [require-g-link-to](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/docs/rules/require-g-link-to.md)     | Require v-bind:to or to of `<g-link>` elements                                 |
