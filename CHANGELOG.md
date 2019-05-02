@@ -1,3 +1,9 @@
+#### 1.2.3 (2019-05-02)
+
+##### New Features
+
+*  Add logo for eslint-plugin-gridsome ([#13](https://github.com/gridsome/eslint-plugin-gridsome/pull/13)) ([916f6d2f](https://github.com/gridsome/eslint-plugin-gridsome/commit/916f6d2fbd4a6d8903e5920f8a36f1254527de54))
+
 #### 1.2.2 (2019-05-01)
 
 ##### Documentation Changes
