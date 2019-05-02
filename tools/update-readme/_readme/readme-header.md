@@ -1,4 +1,6 @@
-# eslint-plugin-gridsome
+<p align="center"><img width="143px" height="130px" src="./assets/logo/eslint-plugin-gridsome.svg" alt="ESLint plugin for Gridsome"></p>
+
+<h1 align="center">eslint-plugin-gridsome</h1>
 
 [![npm version](https://badge.fury.io/js/eslint-plugin-gridsome.svg)](https://badge.fury.io/js/eslint-plugin-gridsome)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -6,6 +8,7 @@
 This is ESlint plugin for [Gridsome](https://gridsome.org/).
 
 ## usage
+
 ```bash
 $ yarn add eslint eslint-plugin-gridsome vue-eslint-parser -D
 ```
@@ -30,6 +33,10 @@ module.exports = {
 
 or
 
+```bash
+$ yarn add eslint eslint-plugin-gridsome -D
+```
+
 ```javascript
 module.exports = {
   plugins: ["gridsome"],
@@ -45,11 +52,12 @@ module.exports = {
 };
 ```
 
+## configs
+
+- [recommended](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/lib/configs/recommended.js)
+
 ## contributing
 
 Check [CONTRIBUTING.md](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/CONTRIBUTING.md).
-
-## configs
-- [recommended](https://github.com/gridsome/eslint-plugin-gridsome/blob/master/lib/configs/recommended.js)
 
 ## Rules
