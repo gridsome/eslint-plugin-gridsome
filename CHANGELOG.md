@@ -1,3 +1,9 @@
+#### 1.2.4 (2019-05-03)
+
+##### Chores
+
+*  Update logo png and change format readme ([65b0690e](https://github.com/gridsome/eslint-plugin-gridsome/commit/65b0690e756f02d0be844318b1d5a87d4aa25c62))
+
 #### 1.2.3 (2019-05-02)
 
 ##### New Features
