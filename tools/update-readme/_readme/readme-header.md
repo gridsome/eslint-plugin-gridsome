@@ -1,11 +1,20 @@
-<p align="center"><img width="143px" height="130px" src="./assets/logo/eslint-plugin-gridsome.svg" alt="ESLint plugin for Gridsome"></p>
+<p align="center"><img width="143px" height="130px" src="https://raw.githubusercontent.com/gridsome/eslint-plugin-gridsome/master/assets/logo/eslint-plugin-gridsome.png" alt="ESLint plugin for Gridsome"></p>
 
-<h1 align="center">eslint-plugin-gridsome</h1>
 
-[![npm version](https://badge.fury.io/js/eslint-plugin-gridsome.svg)](https://badge.fury.io/js/eslint-plugin-gridsome)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
-This is ESlint plugin for [Gridsome](https://gridsome.org/).
+<h2 align="center">eslint-plugin-gridsome</h2>
+<p align="center">
+  This is ESlint plugin for <a href="https://gridsome.org/" rel="nofollow">Gridsome</a>.
+</p>
+<p align="center">
+  <a title="Current version" href="https://badge.fury.io/js/eslint-plugin-gridsome" rel="nofollow">
+    <img src="https://badge.fury.io/js/eslint-plugin-gridsome.svg">
+  </a>
+  <a title="MIT License" href="[LICENSE](https://opensource.org/licenses/MIT)" rel="nofollow">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg">
+  </a>
+  <br>
+  <br>
+</p>
 
 ## usage
 
