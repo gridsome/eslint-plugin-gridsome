@@ -35,7 +35,10 @@ module.exports = {
     "gridsome/format-query-block": "error"
     ...
   },
-  parser: "vue-eslint-parser"
+  parser: "vue-eslint-parser",
+  "parserOptions": {
+    "sourceType": "module"
+  }
 };
 ```
 
@@ -48,7 +51,10 @@ $ yarn add eslint eslint-plugin-gridsome -D
 ```javascript
 module.exports = {
   plugins: ["gridsome"],
-  extends: ["plugin:gridsome/recommended"]
+  extends: ["plugin:gridsome/recommended"],
+  "parserOptions": {
+    "sourceType": "module"
+  }
 };
 ```
 
@@ -57,7 +63,10 @@ If you want to use `eslint-config-prettier`, you set that before gridsome config
 ```javascript
 module.exports = {
   plugins: ["gridsome"],
-  extends: ["prettier", "plugin:gridsome/recommended"]
+  extends: ["prettier", "plugin:gridsome/recommended"],
+  "parserOptions": {
+    "sourceType": "module"
+  }
 };
 ```
 
