@@ -1,3 +1,14 @@
+#### 1.2.5 (2019-05-11)
+
+##### Chores
+
+*  Update logo ([4c92d208](https://github.com/gridsome/eslint-plugin-gridsome/commit/4c92d208e7081012f68db6c448593a0fe46df497))
+
+##### Refactors
+
+*  Add parserOptions item and change env node to browser ([61b5eb63](https://github.com/gridsome/eslint-plugin-gridsome/commit/61b5eb63618d3b05e176729e002728010be4a2ff))
+* **configs:**  Added parser option ([#14](https://github.com/gridsome/eslint-plugin-gridsome/pull/14)) ([987c200e](https://github.com/gridsome/eslint-plugin-gridsome/commit/987c200e190c5efe3188f9bb52c7ae00eccdb45a))
+
 #### 1.2.4 (2019-05-03)
 
 ##### Chores
