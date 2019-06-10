@@ -1,3 +1,9 @@
+#### 1.2.6 (2019-06-10)
+
+##### Build System / Dependencies
+
+*  Upgrade packages ([#18](https://github.com/gridsome/eslint-plugin-gridsome/pull/18)) ([c2f24932](https://github.com/gridsome/eslint-plugin-gridsome/commit/c2f249320704ae5aadce31de7fb8fa91866744c7))
+
 #### 1.2.5 (2019-05-11)
 
 ##### Chores
