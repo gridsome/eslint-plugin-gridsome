@@ -21,6 +21,12 @@
 $ yarn add eslint eslint-plugin-gridsome vue-eslint-parser -D
 ```
 
+### Tip: 👩‍🚀
+
+There is a reason to install `vue-eslint-parser`.
+eslint-plugin-gridsome has been using vue-eslint-parser over the ^6.0.4 version.
+If you want to use other eslint plugin package, be careful vue-eslint-parser's version.
+
 ```javascript
 // .eslintrc.*
 // this sample is .eslintrc.js
