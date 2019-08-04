@@ -1,3 +1,13 @@
+#### 1.2.7 (2019-08-04)
+
+##### Build System / Dependencies
+
+*  upgrade dependence packages ([80eb3ada](https://github.com/gridsome/eslint-plugin-gridsome/commit/80eb3ada73b6409c24557d50ad8c9cccb01009c1))
+
+##### Documentation Changes
+
+*  Add tips about vue-eslint-parser version ([#19](https://github.com/gridsome/eslint-plugin-gridsome/pull/19)) ([a77762c6](https://github.com/gridsome/eslint-plugin-gridsome/commit/a77762c657ffdeb73448baf479867ea771b6dd76))
+
 #### 1.2.6 (2019-06-10)
 
 ##### Build System / Dependencies
