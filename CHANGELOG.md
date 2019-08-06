@@ -1,3 +1,10 @@
+#### 1.2.8 (2019-08-06)
+
+##### Build System / Dependencies
+
+*  downgrade eslint from ^6.1.0 ([b80a0988](https://github.com/gridsome/eslint-plugin-gridsome/commit/b80a0988e4f466157f084498e31e6f7c2ebb2c8f))
+* **deps:**  bump lodash from 4.17.11 to 4.17.14 ([#20](https://github.com/gridsome/eslint-plugin-gridsome/pull/20)) ([e2d4098a](https://github.com/gridsome/eslint-plugin-gridsome/commit/e2d4098a13bed8ad2624b0a267076eff20eca548))
+
 #### 1.2.7 (2019-08-04)
 
 ##### Build System / Dependencies
