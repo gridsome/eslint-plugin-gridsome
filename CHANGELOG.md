@@ -1,3 +1,27 @@
+#### 1.2.9 (2019-09-15)
+
+##### Build System / Dependencies
+
+* **deps:**
+  *  bump js-yaml from 3.12.1 to 3.13.1 ([#17](https://github.com/gridsome/eslint-plugin-gridsome/pull/17)) ([c4c95ea9](https://github.com/gridsome/eslint-plugin-gridsome/commit/c4c95ea997816d83d1359f46a7c766feed3510fd))
+  *  bump mixin-deep from 1.3.1 to 1.3.2 ([#23](https://github.com/gridsome/eslint-plugin-gridsome/pull/23)) ([9b324cc9](https://github.com/gridsome/eslint-plugin-gridsome/commit/9b324cc9bf2400b803c1d6f201ef2a3eb6a1faf2))
+  *  bump eslint-utils from 1.3.1 to 1.4.2 ([#22](https://github.com/gridsome/eslint-plugin-gridsome/pull/22)) ([4aa96f6c](https://github.com/gridsome/eslint-plugin-gridsome/commit/4aa96f6c64e4f8b9c328276fdc8588df6257b2d7))
+*  upgrade packages version ([#32](https://github.com/gridsome/eslint-plugin-gridsome/pull/32)) ([a8420ff7](https://github.com/gridsome/eslint-plugin-gridsome/commit/a8420ff75802bd3c05ac70258750d8b3c35857d0))
+
+##### Chores
+
+*  remove fixture ([#30](https://github.com/gridsome/eslint-plugin-gridsome/pull/30)) ([a151708a](https://github.com/gridsome/eslint-plugin-gridsome/commit/a151708af977e74528cd52e3f60f2bb344bc5f20))
+
+##### Continuous Integration
+
+*  refacotr travis.yml ([#29](https://github.com/gridsome/eslint-plugin-gridsome/pull/29)) ([1bee3712](https://github.com/gridsome/eslint-plugin-gridsome/commit/1bee3712d28ca2f12dcfe9174824ed3c41b3e839))
+
+##### Documentation Changes
+
+*  reverse correct and incorrect example ([#33](https://github.com/gridsome/eslint-plugin-gridsome/pull/33)) ([37736527](https://github.com/gridsome/eslint-plugin-gridsome/commit/37736527b3fb7d8d12e49d15fe8bbba4adb8331d))
+*  fix others issue template ([cdd16edf](https://github.com/gridsome/eslint-plugin-gridsome/commit/cdd16edf1fc6c6c590137ed66bee71b6151088f0))
+*  Add issue template ([#25](https://github.com/gridsome/eslint-plugin-gridsome/pull/25)) ([01d48038](https://github.com/gridsome/eslint-plugin-gridsome/commit/01d48038bad09c838fb08f72e7f7a7add11c11fe))
+
 #### 1.2.8 (2019-08-06)
 
 ##### Build System / Dependencies
