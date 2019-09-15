@@ -27,7 +27,6 @@
   "scripts": {
     "test": "mocha tests/lib/rules/*.js",
     "test:watch": "mocha tests/lib/rules/*.js --watch",
-    "lint": "eslint ./tests/fixture --ext .vue  --rulesdir lib/rules",
     "_log:lint": "eslint log/tests/* --rulesdir log/rules",
     "_log:print": "run-s _log:lint > log/log.json",
     "log": "npm run _log:print --silent",
