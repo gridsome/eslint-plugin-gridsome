@@ -2,7 +2,7 @@
 
 ## :book: Rule Details
 
-- This rule reports the `<g-link>` elements which do not have `v-bind:to` or `to`.
+- This rule reports the `<g-link>` elements which do not have `v-bind:to`, `to` or `v-bind:href`, `href`.
 
 :-1: Examples of **incorrect** code for this rule:
 
@@ -22,6 +22,9 @@
     <g-link to="/" class="foo">link is here</g-link>
     <g-link :to="article.path" class="foo">link is here</g-link>
     <g-link :to="{ name: 'about' }" class="foo">link is here</g-link>
+    <g-link href="http://www.example.com" class="foo">link is here</g-link>
+    <g-link href="https://www.example.com" class="foo">link is here</g-link>
+    <g-link :href="absolute.link" class="foo">link is here</g-link>
   </div>
 </template>
 ```
