@@ -9,9 +9,7 @@
 ```html
 <template>
   <div>
-    <g-link to="/" class="foo">link is here</g-link>
-    <g-link :to="article.path" class="foo">link is here</g-link>
-    <g-link :to="{ name: 'about' }" class="foo">link is here</g-link>
+    <g-link class="foo">link is here</g-link>
   </div>
 </template>
 ```
@@ -21,7 +19,9 @@
 ```html
 <template>
   <div>
-    <g-link class="foo">link is here</g-link>
+    <g-link to="/" class="foo">link is here</g-link>
+    <g-link :to="article.path" class="foo">link is here</g-link>
+    <g-link :to="{ name: 'about' }" class="foo">link is here</g-link>
   </div>
 </template>
 ```
