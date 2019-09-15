@@ -6,14 +6,25 @@ dist: trusty
 sudo: false
 cache: yarn
 
-branches:
-  only:
-    - "/^v?[0-9\\.]+/"
+stages:
+  - name: test
+    if: type = pull_request
+  - name: npm deploy
+    if: tag =~ /^v?[0-9\\.]+/
 
-deploy:
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
-  on:
-    tags: true
-  skip_cleanup: true
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+    - stage: npm deploy
+      before_install: skip
+      install: skip
+      script: skip
+      after_success: true
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL
+        api_key: $NPM_TOKEN
+        skip_cleanup: true
+        on:
+          tags: true
