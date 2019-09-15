@@ -53,6 +53,39 @@ tester.run("require-g-link-to", rule, {
         link is here
         </g-link>
       </template>`
+    },
+    {
+      code: `
+      <template>
+        <g-link
+          href="http://www.example.com"
+          class="foo"
+        >
+        link is here
+        </g-link>
+      </template>`
+    },
+    {
+      code: `
+      <template>
+        <g-link
+          href="https://www.example.com"
+          class="foo"
+        >
+        link is here
+        </g-link>
+      </template>`
+    },
+    {
+      code: `
+      <template>
+        <g-link
+          :href="absolute.url"
+          class="foo"
+        >
+        link is here
+        </g-link>
+      </template>`
     }
   ],
   invalid: [
