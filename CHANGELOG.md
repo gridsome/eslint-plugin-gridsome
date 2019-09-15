@@ -1,3 +1,9 @@
+### 1.3.0 (2019-09-15)
+
+##### Refactors
+
+*  refactor g-link consider href ([#35](https://github.com/gridsome/eslint-plugin-gridsome/pull/35)) ([2eec64b5](https://github.com/gridsome/eslint-plugin-gridsome/commit/2eec64b59ac6315a0ba9e09c42d00986b37e0360))
+
 #### 1.2.9 (2019-09-15)
 
 ##### Build System / Dependencies
