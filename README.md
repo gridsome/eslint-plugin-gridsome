@@ -18,7 +18,7 @@
 ## usage
 
 ```bash
-$ yarn add eslint eslint-plugin-gridsome vue-eslint-parser -D
+$ npm install eslint eslint-plugin-gridsome vue-eslint-parser -D
 ```
 
 ### Tip: 👩‍🚀
@@ -55,7 +55,7 @@ module.exports = {
 or
 
 ```bash
-$ yarn add eslint eslint-plugin-gridsome -D
+$ npm install eslint eslint-plugin-gridsome -D
 ```
 
 ```javascript
