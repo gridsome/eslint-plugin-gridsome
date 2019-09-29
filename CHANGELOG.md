@@ -4,6 +4,14 @@
 
 *  remove yarn ([#37](https://github.com/gridsome/eslint-plugin-gridsome/pull/37)) ([354c0cfb](https://github.com/gridsome/eslint-plugin-gridsome/commit/354c0cfb86cd24863f422f33e85cbf424e36d483))
 
+##### Documentation Changes
+
+* **CHANGELOG.md:**  :bookmark: updated CHANGELOG.md ([7a726e71](https://github.com/gridsome/eslint-plugin-gridsome/commit/7a726e71eff88392e0748f17148d950cff33be51))
+
+##### Other Changes
+
+*  updated version ([4216aecb](https://github.com/gridsome/eslint-plugin-gridsome/commit/4216aecbd843f68383fdba009a46191a13071f46))
+
 ### 1.3.0 (2019-09-15)
 
 ##### Refactors
