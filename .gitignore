@@ -127,3 +127,4 @@ typings/
 .node-version
 /log
 .vscode
+.tool-versions

@@ -4,7 +4,12 @@ node_js:
 
 dist: trusty
 sudo: false
-cache: yarn
+cache:
+  directories:
+  - "$HOME/.npm"
+
+install:
+- npm ci
 
 stages:
   - name: test
@@ -15,7 +20,7 @@ stages:
 jobs:
   include:
     - stage: test
-      script: yarn test
+      script: npm run test
     - stage: npm deploy
       before_install: skip
       install: skip
