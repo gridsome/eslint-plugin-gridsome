@@ -1,3 +1,9 @@
+#### 1.3.1 (2019-09-29)
+
+##### Build System / Dependencies
+
+*  remove yarn ([dd2e206a](https://github.com/gridsome/eslint-plugin-gridsome/commit/dd2e206a00142b166e8831163793068d2c669212))
+
 ### 1.3.0 (2019-09-15)
 
 ##### Refactors
