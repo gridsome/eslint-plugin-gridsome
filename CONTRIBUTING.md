@@ -46,4 +46,5 @@ $ npm run commit
 
 # development directory
 
-If you confirm rules in `lib/rules`, generate `development` directory with `npm run gen:development`
+If you confirm rules in `lib/rules`, generate `development` directory with `npm run gen:development`.
+And then `npm run confirm`.
