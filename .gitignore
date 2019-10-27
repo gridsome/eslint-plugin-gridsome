@@ -128,3 +128,5 @@ typings/
 /log
 .vscode
 .tool-versions
+/development
+!/development/.gitkeep

@@ -27,6 +27,7 @@
   "scripts": {
     "test": "mocha tests/lib/rules/*.js",
     "test:watch": "mocha tests/lib/rules/*.js --watch",
+    "confirm": "eslint ./development --fix --ext .vue  --rulesdir lib/rules",
     "_log:lint": "eslint log/tests/* --rulesdir log/rules",
     "_log:print": "run-s _log:lint > log/log.json",
     "log": "npm run _log:print --silent",
@@ -35,6 +36,7 @@
     "commit": "git-cz",
     "gen:rule": "hygen generate rule",
     "gen:log": "hygen generate log",
+    "gen:development": "hygen generate development",
     "update-readme": "node tools/update-readme/index.js",
     "release:major": "changelog -M -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version major -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
     "release:minor": "changelog -m -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version minor -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
