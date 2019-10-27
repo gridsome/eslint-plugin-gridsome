@@ -43,3 +43,7 @@ Commitizen's commit template is `cz-conventional-changelog`
 ```bash
 $ npm run commit
 ```
+
+# development directory
+
+If you confirm rules in `lib/rules`, generate `development` directory with `npm run gen:development`
