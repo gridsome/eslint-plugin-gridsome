@@ -4,6 +4,7 @@
 
 - This rule checks the consistency of a code in `<page-query>` and `<static-query>` tags.
 - This rule's formatter is [Prettier](https://prettier.io). [Parser is `graphql`](https://prettier.io/docs/en/options.html#parser)
+- If you use `.prettierrc`, this rule is check that file. Consider option `tabWidth` and `useTabs`.
 
 ## :book: Rule Details
 

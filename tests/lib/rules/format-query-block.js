@@ -69,16 +69,16 @@ query Blog {
       output: `
 <template></template>
 <page-query>
-query Blog {
-  allWordPressPost(limit: 5) {
-    edges {
-      node {
-        id
-        title
+  query Blog {
+    allWordPressPost(limit: 5) {
+      edges {
+        node {
+          id
+          title
+        }
       }
     }
   }
-}
 </page-query>
     `,
       errors: ["page-query code format is incorrect"]
@@ -97,11 +97,11 @@ query Blog {
       output: `
 <template></template>
 <static-query>
-query Example {
-  example: examplePage(path: "/docs/example") {
-    content
+  query Example {
+    example: examplePage(path: "/docs/example") {
+      content
+    }
   }
-}
 </static-query>
     `,
       errors: ["static-query code format is incorrect"]
