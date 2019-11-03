@@ -1,3 +1,13 @@
+### 1.4.0 (2019-11-03)
+
+##### Chores
+
+*  add development directory ([#41](https://github.com/gridsome/eslint-plugin-gridsome/pull/41)) ([6d558f98](https://github.com/gridsome/eslint-plugin-gridsome/commit/6d558f985d745a2356e1662afeb73fc90b28d966))
+
+##### Other Changes
+
+* **format-query-block:**  add baseIndent option ([#42](https://github.com/gridsome/eslint-plugin-gridsome/pull/42)) ([d053d75f](https://github.com/gridsome/eslint-plugin-gridsome/commit/d053d75ffb438791dd9faab3b48de2b6f83bee5a))
+
 #### 1.3.2 (2019-09-29)
 
 ##### Build System / Dependencies
