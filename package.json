@@ -38,6 +38,8 @@
     "gen:log": "hygen generate log",
     "gen:development": "hygen generate development",
     "update-readme": "node tools/update-readme/index.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "release:major": "changelog -M -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version major -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
     "release:minor": "changelog -m -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version minor -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
     "release:patch": "changelog -p -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version patch -m 'feat: :tada: updated version' && git push origin && git push origin --tags"
@@ -61,7 +63,8 @@
     "hygen": "^5.0.3",
     "lint-staged": "^9.5.0",
     "mocha": "^6.2.2",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "vuepress": "^1.2.0"
   },
   "peerDependencies": {},
   "engines": {
