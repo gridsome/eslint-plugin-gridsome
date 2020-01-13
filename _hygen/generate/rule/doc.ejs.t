@@ -1,6 +1,11 @@
 ---
 to: docs/rules/<%= name %>.md
 ---
+---
+title: <%= name %>
+sidebarDepth: 0
+description: <%= description %>
+---
 ## Rule's description is here (gridsome/<%= name %>)
 
 ## :book: Rule Details
