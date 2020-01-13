@@ -1,4 +1,10 @@
-## Require v-bind:to or to of <g-link> elements (gridsome/require-g-link-to)
+---
+title: require-g-link-to
+sidebarDepth: 0
+description: Require v-bind:to or to of `<g-link>` elements
+---
+
+## Require v-bind:to or to of `<g-link>` elements (gridsome/require-g-link-to)
 
 ## :book: Rule Details
 
