@@ -48,3 +48,15 @@ $ npm run commit
 
 If you confirm rules in `lib/rules`, generate `development` directory with `npm run gen:development`.
 And then `npm run confirm`.
+
+# Did you contribute to eslint-plugin-gridsome❓
+
+Great!!  
+You can add contributors list with [allcontributors](https://allcontributors.org/).  
+Example:
+
+```bash
+npx all-contributors add tyankatsu0105 code,doc,maintenance,test
+```
+
+Also check [this](https://allcontributors.org/docs/en/emoji-key).
