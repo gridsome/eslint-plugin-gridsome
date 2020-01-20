@@ -9,7 +9,8 @@
     <img src="https://badge.fury.io/js/eslint-plugin-gridsome.svg">
   </a>
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-  <!-- ALL-CONTRIBUTORS-BADGE:END -->
+<img alt="All Contributors" src="https://img.shields.io/badge/all_contributors-2-orange.svg">
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <a title="MIT License" href="[LICENSE](https://opensource.org/licenses/MIT)" rel="nofollow">
     <img src="https://img.shields.io/badge/License-MIT-green.svg">
   </a>
@@ -36,7 +37,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://tyankatsu.netlify.com/"><img src="https://avatars0.githubusercontent.com/u/28397593?v=4" width="100px;" alt=""/><br /><sub><b>tyankatsu</b></sub></a><br /><a href="https://github.com/gridsome/eslint-plugin-gridsome/commits?author=tyankatsu0105" title="Code">💻</a> <a href="https://github.com/gridsome/eslint-plugin-gridsome/commits?author=tyankatsu0105" title="Documentation">📖</a> <a href="#maintenance-tyankatsu0105" title="Maintenance">🚧</a> <a href="https://github.com/gridsome/eslint-plugin-gridsome/commits?author=tyankatsu0105" title="Tests">⚠️</a></td>
-    <td align="center"><a href="http://www.nestor.rip"><img src="https://avatars0.githubusercontent.com/u/1107521?v=4" width="100px;" alt=""/><br /><sub><b>Nestor Vera</b></sub></a><br /><a href="https://github.com/gridsome/eslint-plugin-gridsome/issues?q=author%3Ahacknug" title="Bug reports">🐛</a> <a href="#ideas-hacknug" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://www.nestor.rip"><img src="https://avatars0.githubusercontent.com/u/1107521?v=4" width="100px;" alt=""/><br /><sub><b>Nestor Vera</b></sub></a><br /><a href="https://github.com/gridsome/eslint-plugin-gridsome/issues?q=author%3Ahacknug" title="Bug reports">🐛</a> <a href="#ideas-hacknug" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
