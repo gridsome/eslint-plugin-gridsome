@@ -1,4 +1,10 @@
-## Require v-bind:src or src of <g-image> elements (gridsome/require-g-image-src)
+---
+title: require-g-image-src
+sidebarDepth: 0
+description: Require v-bind:src or src of `<g-image>` elements
+---
+
+## Require v-bind:src or src of `<g-image>` elements (gridsome/require-g-image-src)
 
 ## :book: Rule Details
 

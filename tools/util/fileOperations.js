@@ -4,7 +4,7 @@ const fs = require("fs");
  * @param {string} filePath
  * @returns {string} file's content
  */
-module.exports.read = filePath => {
+const read = filePath => {
   const content = fs.readFileSync(filePath, "utf8");
   return content;
 };
@@ -13,7 +13,7 @@ module.exports.read = filePath => {
  * @param {string} targetFilePath
  * @param {string} writeContent
  */
-module.exports.write = (targetFilePath, writeContent) => {
+const write = (targetFilePath, writeContent) => {
   fs.writeFileSync(targetFilePath, writeContent);
 };
 
@@ -21,7 +21,13 @@ module.exports.write = (targetFilePath, writeContent) => {
  * @param {string} readFilePath
  * @param {string} appendContent
  */
-module.exports.append = (readFilePath, appendContent) => {
+const append = (readFilePath, appendContent) => {
   const readFile = fs.openSync(readFilePath, "a");
   fs.appendFileSync(readFile, appendContent, "utf8");
+};
+
+module.exports = {
+  read,
+  write,
+  append
 };
