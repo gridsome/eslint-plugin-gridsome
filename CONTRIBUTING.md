@@ -59,4 +59,6 @@ Example:
 npx all-contributors add tyankatsu0105 code,doc,maintenance,test
 ```
 
+Then, send PR.
+
 Also check [this](https://allcontributors.org/docs/en/emoji-key).
