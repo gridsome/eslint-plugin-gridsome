@@ -1,3 +1,23 @@
+#### 1.4.1 (2020-03-08)
+
+##### Build System / Dependencies
+
+* **node engine:**  update node engine to v10.13.0 ([#50](https://github.com/gridsome/eslint-plugin-gridsome/pull/50)) ([45395586](https://github.com/gridsome/eslint-plugin-gridsome/commit/45395586e812167f1c1eb7e9c02d4e4a86b2b9ff))
+*  Upgrade ESLint v6 ([#47](https://github.com/gridsome/eslint-plugin-gridsome/pull/47)) ([0a0e3900](https://github.com/gridsome/eslint-plugin-gridsome/commit/0a0e3900a655e93f7a4fd2422ed104c1ca5ebe86))
+
+##### Chores
+
+*  add all-contributors-cli ([#52](https://github.com/gridsome/eslint-plugin-gridsome/pull/52)) ([5db85f02](https://github.com/gridsome/eslint-plugin-gridsome/commit/5db85f02e95240d2e3d133e9a36138242e3637f1))
+
+##### Documentation Changes
+
+*  add @hacknug as a contributor ([#54](https://github.com/gridsome/eslint-plugin-gridsome/pull/54)) ([cd9c8ced](https://github.com/gridsome/eslint-plugin-gridsome/commit/cd9c8ced8422da0e3014108b663dc87a287328d0))
+
+##### New Features
+
+*  Support break line ([#58](https://github.com/gridsome/eslint-plugin-gridsome/pull/58)) ([b2ea54c0](https://github.com/gridsome/eslint-plugin-gridsome/commit/b2ea54c091d0fa46d41a38f9f5d1f2625ddec3df))
+* **website:**  Add docs site with vuepress ([#51](https://github.com/gridsome/eslint-plugin-gridsome/pull/51)) ([c50b84c6](https://github.com/gridsome/eslint-plugin-gridsome/commit/c50b84c6a47383ed7083827d2beee1124f24fdce))
+
 ### 1.4.0 (2019-11-03)
 
 ##### Chores
