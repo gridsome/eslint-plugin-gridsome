@@ -24,27 +24,58 @@ tester.run("format-query-block", rule, {
     {
       code: `
 <page-query>
-query Blog {
-  allWordPressPost(limit: 5) {
-    edges {
-      node {
-        id
-        title
+  query Blog {
+    allWordPressPost(limit: 5) {
+      edges {
+        node {
+          id
+          title
+        }
       }
     }
   }
-}
+</page-query>
+    `
+    },
+    {
+      code: `
+<page-query>
+  fragment RankingParts on TourRanking {
+    id
+    rankings: data {
+      rank
+      nickname
+      score
+      badge: pin_badge_image_url
+      ranking_started_at
+      ranking_finished_at
+    }
+  }
+
+  query($id: ID, $prevId: ID, $nextId: ID) {
+    ranking: tourRanking(id: $id) {
+      ...RankingParts
+    }
+
+    next: tourRanking(id: $prevId) {
+      ...RankingParts
+    }
+
+    prev: tourRanking(id: $nextId) {
+      ...RankingParts
+    }
+  }
 </page-query>
     `
     },
     {
       code: `
 <static-query>
-query Example {
-  example: examplePage(path: "/docs/example") {
+  query Example {
+    example: examplePage(path: "/docs/example") {
     content
+    }
   }
-}
 </static-query>
     `
     }
@@ -74,6 +105,42 @@ query Blog {
       edges {
         node {
           id
+          title
+        }
+      }
+    }
+  }
+</page-query>
+    `,
+      errors: ["page-query code format is incorrect"]
+    },
+    {
+      code: `
+<template></template>
+<page-query>
+  query Blog {
+    allWordPressPost(limit: 5) {
+      edges {
+        node {
+          id
+
+          
+          title
+        }
+      }
+    }
+  }
+</page-query>
+    `,
+      output: `
+<template></template>
+<page-query>
+  query Blog {
+    allWordPressPost(limit: 5) {
+      edges {
+        node {
+          id
+
           title
         }
       }
