@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'lib/**'
-      - '.github/workflows/rules-test.yml'
+      - '.github/workflows/test.yml'
 
 jobs:
   test:
