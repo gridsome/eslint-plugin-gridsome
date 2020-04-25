@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: master
           
       - uses: actions/cache@v1
         id: cache
@@ -27,6 +29,8 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
+      
+      - run: git fetch
 
       - run: npm run release:trigger
         env:
