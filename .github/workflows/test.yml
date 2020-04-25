@@ -2,6 +2,8 @@ name: Rules Test
 
 on:
   push:
+    branches:
+      - releases/*
     paths:
       - 'lib/**'
       - 'package.json'
