@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'lib/**'
+      - 'package.json'
       - '.github/workflows/test.yml'
 
 jobs:
