@@ -8,6 +8,9 @@
   <a title="Current version" href="https://badge.fury.io/js/eslint-plugin-gridsome" rel="nofollow">
     <img src="https://badge.fury.io/js/eslint-plugin-gridsome.svg">
   </a>
+  <a title="deploy" href="https://github.com/algolia/shipjs" rel="nofollow">
+    <img src="https://img.shields.io/badge/deploy-🛳Ship.js-blue?style=flat">
+  </a>
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <img alt="All Contributors" src="https://img.shields.io/badge/all_contributors-2-orange.svg">
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
