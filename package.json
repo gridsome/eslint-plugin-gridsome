@@ -1,24 +1,14 @@
 {
   "name": "eslint-plugin-gridsome",
   "version": "1.4.1",
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "vue",
-    "gridsome"
-  ],
+  "keywords": ["eslint", "eslintplugin", "vue", "gridsome"],
   "homepage": "https://github.com/gridsome/eslint-plugin-gridsome",
   "bugs": {
     "url": "https://github.com/gridsome/eslint-plugin-gridsome/issues"
   },
   "license": "MIT",
   "author": "tyankatsu <frips.ryilsufupe+dev@gmail.com> (https://tyankatsu.netlify.com/)",
-  "files": [
-    "LICENSE",
-    "README.md",
-    "lib",
-    "package.json"
-  ],
+  "files": ["LICENSE", "README.md", "lib", "package.json"],
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -42,7 +32,9 @@
     "docs:build": "vuepress build docs",
     "release:major": "changelog -M -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version major -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
     "release:minor": "changelog -m -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version minor -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
-    "release:patch": "changelog -p -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version patch -m 'feat: :tada: updated version' && git push origin && git push origin --tags"
+    "release:patch": "changelog -p -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version patch -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
+    "release:prepare": "shipjs prepare",
+    "release:trigger": "shipjs trigger"
   },
   "config": {
     "changelog": "https://github.com/gridsome/eslint-plugin-gridsome"
@@ -64,6 +56,7 @@
     "lint-staged": "^10.1.7",
     "mocha": "^7.1.1",
     "npm-run-all": "^4.1.5",
+    "shipjs": "0.18.2",
     "vuepress": "^1.4.1"
   },
   "engines": {
@@ -73,12 +66,7 @@
     "access": "public"
   },
   "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.md": [
-      "prettier --write"
-    ]
+    "*.js": ["prettier --write", "eslint --fix"],
+    "*.md": ["prettier --write"]
   }
 }
