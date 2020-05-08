@@ -1,13 +1,6 @@
 name: Rules Test
 
-on:
-  push:
-    branches:
-      - releases/*
-    paths:
-      - 'lib/**'
-      - 'package.json'
-      - '.github/workflows/test.yml'
+on: push
 
 jobs:
   test:
