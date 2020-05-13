@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-gridsome",
-  "version": "1.4.10",
+  "version": "1.4.11",
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -62,7 +62,7 @@
     "vuepress": "^1.4.1"
   },
   "engines": {
-    "node": "^10.13.0 || ^12.0.0 || ^14.0.0"
+    "node": "^10.13.0 || ^12.13.0 || ^13.0.0 || >=14.0.0"
   },
   "publishConfig": {
     "access": "public"
