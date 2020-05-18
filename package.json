@@ -19,13 +19,14 @@
     "lib",
     "package.json"
   ],
-  "main": "lib/index.js",
+  "main": "dist/lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gridsome/eslint-plugin-gridsome.git"
   },
   "scripts": {
     "test": "mocha tests/lib/rules/*.js",
+    "test:ts": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
     "test:watch": "mocha tests/lib/rules/*.js --watch",
     "confirm": "eslint ./development --fix --ext .vue  --rulesdir lib/rules",
     "_log:lint": "eslint log/tests/* --rulesdir log/rules",
@@ -44,14 +45,14 @@
     "release:trigger": "shipjs trigger"
   },
   "dependencies": {
+    "@typescript-eslint/experimental-utils": "^2.33.0",
     "prettier": "^2.0.5",
-    "vue-eslint-parser": "^7.0.0"
+    "vue-eslint-parser": "^7.1.0"
   },
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^13.0.0",
     "@types/eslint": "^6.8.1",
     "@types/prettier": "^2.0.0",
-    "@typescript-eslint/experimental-utils": "^2.33.0",
     "all-contributors-cli": "^6.14.2",
     "change-case": "^4.1.1",
     "commitizen": "^4.1.2",
