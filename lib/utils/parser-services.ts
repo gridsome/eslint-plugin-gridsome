@@ -5,21 +5,19 @@
 import { AST } from "vue-eslint-parser";
 import { TSESLint, TSESTree } from "@typescript-eslint/experimental-utils";
 
-type VueEslintParserNodeTypes<T> = T extends AST.Node ? T["type"] : never;
+type VueEslintParserNodeTypes = AST.Node["type"];
 
 type TemplateBodyVisitor = {
-  [key in VueEslintParserNodeTypes<AST.Node>]?: TSESLint.RuleFunction<
+  [key in VueEslintParserNodeTypes]?: TSESLint.RuleFunction<
     AST.Node & TSESTree.BaseNode
   >;
-};
+} & { [nodeSelector: string]: TSESLint.RuleFunction | undefined };
 
 type ScriptVisitor = { [key: string]: (...args: any) => void };
 
 export const defineTemplateBodyVisitor = (
   context: any,
-  templateBodyVisitor?: TemplateBodyVisitor & {
-    [nodeSelector: string]: TSESLint.RuleFunction | undefined;
-  },
+  templateBodyVisitor?: TemplateBodyVisitor,
   scriptVisitor?: ScriptVisitor
 ) =>
   context.parserServices.defineTemplateBodyVisitor(

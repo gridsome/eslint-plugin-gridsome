@@ -1,5 +1,10 @@
 import { AST } from "vue-eslint-parser";
-import { createRule, defineTemplateBodyVisitor } from "../utils";
+import {
+  createRule,
+  defineTemplateBodyVisitor,
+  hasAttribute,
+  hasDirective,
+} from "../utils";
 
 type Options = {};
 
@@ -25,7 +30,13 @@ export = createRule<[Options], MessageIds>({
   create(context) {
     return defineTemplateBodyVisitor(context, {
       "VElement[name='g-image']"(node: AST.VElement) {
-        console.log(node.name);
+        if (!hasAttribute(node, "src") && !hasDirective(node, "bind", "src")) {
+          context.report({
+            node,
+            loc: node.loc,
+            messageId: "requireGImageSrc",
+          });
+        }
       },
     });
   },
