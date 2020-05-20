@@ -1,13 +1,15 @@
-import { TSESLint } from "@typescript-eslint/experimental-utils";
+import { TSESLint, TSESTree } from "@typescript-eslint/experimental-utils";
 
-// we'll automatically add the url + tslint description for people.
-type CreateRuleMetaDocs = Omit<TSESLint.RuleMetaDataDocs, "url">;
-export type CreateRuleMeta<TMessageIds extends string> = {
-  docs: CreateRuleMetaDocs;
-} & Omit<TSESLint.RuleMetaData<TMessageIds>, "docs">;
+/**
+ * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/experimental-utils/src/ts-eslint/Rule.ts
+ */
 
 type ReportDescriptor<TMessageIds> = {
+  node: any;
+  loc?: TSESTree.SourceLocation | TSESTree.LineAndColumnData;
   messageId: TMessageIds;
+  data?: Record<string, any>;
+
   [K: string]: any;
 };
 
@@ -28,7 +30,7 @@ export interface RuleContext<
    * The shared settings from configuration.
    * We do not have any shared settings in this plugin.
    */
-  settings: Record<string, unknown>;
+  settings: Record<string, any>;
   /**
    * The name of the parser from configuration.
    */
@@ -36,22 +38,22 @@ export interface RuleContext<
   /**
    * The parser options configured for this run
    */
-  parserOptions: unknown;
+  parserOptions: any;
   /**
    * An object containing parser-provided services for rules
    */
-  parserServices?: unknown;
+  parserServices?: any;
   /**
    * Returns an array of the ancestors of the currently-traversed node, starting at
    * the root of the AST and continuing through the direct parent of the current node.
    * This array does not include the currently-traversed node itself.
    */
-  getAncestors(): unknown[];
+  getAncestors(): any[];
   /**
    * Returns a list of variables declared by the given node.
    * This information can be used to track references to variables.
    */
-  getDeclaredVariables(node: unknown): unknown[];
+  getDeclaredVariables(node: any): any[];
   /**
    * Returns the filename associated with the source.
    */
@@ -60,12 +62,12 @@ export interface RuleContext<
    * Returns the scope of the currently-traversed node.
    * This information can be used track references to variables.
    */
-  getScope(): unknown;
+  getScope(): any;
   /**
    * Returns a SourceCode object that you can use to work with the source that
    * was passed to ESLint.
    */
-  getSourceCode(): unknown;
+  getSourceCode(): any;
   /**
    * Marks a variable with the given name in the current scope as used.
    * This affects the no-unused-vars rule.
@@ -77,4 +79,7 @@ export interface RuleContext<
   report(descriptor: ReportDescriptor<TMessageIds>): void;
 }
 
+/**
+ * eslint-plugin-gridsome traverse only Program.
+ */
 export type RuleListener = Pick<TSESLint.RuleListener, "Program">;

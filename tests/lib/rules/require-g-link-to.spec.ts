@@ -1,24 +1,14 @@
-"use strict";
+import { RuleTester } from "../../util";
 
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
-var rule = require("../../../lib/rules/require-g-link-to");
-var RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/require-g-link-to";
 
-// ------------------------------------------------------------------------------
-// Settings
-// ------------------------------------------------------------------------------
-var tester = new RuleTester({
-  parser: require.resolve("vue-eslint-parser"),
+const tester = new RuleTester({
+  parser: "vue-eslint-parser",
   parserOptions: {
-    ecmaVersion: 2015
-  }
+    ecmaVersion: 2017,
+  },
 });
 
-// ------------------------------------------------------------------------------
-// Tests
-// ------------------------------------------------------------------------------
 tester.run("require-g-link-to", rule, {
   valid: [
     {
@@ -99,7 +89,9 @@ tester.run("require-g-link-to", rule, {
         </g-link>
       </template>`,
       errors: [
-        "Expected '<g-link>' elements to have 'v-bind:to', 'to' or 'v-bind:href', 'href'."
+        {
+          messageId: "requireGLinkTo"
+        }
       ]
     }
   ]

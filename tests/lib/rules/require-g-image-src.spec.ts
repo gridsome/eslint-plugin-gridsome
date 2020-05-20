@@ -5,7 +5,7 @@ import rule from "../../../lib/rules/require-g-image-src";
 const tester = new RuleTester({
   parser: "vue-eslint-parser",
   parserOptions: {
-    ecmaVersion: 2015,
+    ecmaVersion: 2017,
   },
 });
 
