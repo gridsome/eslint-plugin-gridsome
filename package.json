@@ -44,8 +44,8 @@
     "docs:build": "run-s build _docs:build",
     "release:prepare": "shipjs prepare",
     "release:trigger": "shipjs trigger",
-    "typecheck": "npx tsc --project ./tsconfig.build.json --noEmit",
-    "build": "npx tsc --project ./tsconfig.build.json"
+    "typecheck": "tsc --project ./tsconfig.build.json --noEmit",
+    "build": "tsc --project ./tsconfig.build.json"
   },
   "dependencies": {
     "@typescript-eslint/experimental-utils": "^2.33.0",
