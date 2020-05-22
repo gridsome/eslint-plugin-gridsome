@@ -27,7 +27,7 @@ export = createRule<[Options], MessageIds>({
   name: "require-g-link-to",
   meta: {
     docs: {
-      description: "Require v-bind:src or src of `<g-image>` elements",
+      description: "Require v-bind:to or to of `<g-link>` elements",
       category: "Possible Errors",
       recommended: false,
     },
