@@ -17,7 +17,7 @@ export const getIndentInfo = (mergedPrettierOptions: MergedPrettierOption) => {
   const { tabWidth, useTabs } = mergedPrettierOptions;
 
   const result = {
-    baseIndent: tabWidth,
+    baseIndent: tabWidth as number,
     indentChar: defaultInfo.indentChar,
   };
 

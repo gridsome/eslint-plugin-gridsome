@@ -45,7 +45,7 @@ describe("getPrettierOption", () => {
     it("when discover .prettierrc, return option object", () => {
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-prettier-option",
         "use-prettierrc",
         "file.vue"
@@ -62,7 +62,7 @@ describe("getPrettierOption", () => {
     it("when discover .prettierrc, return null", () => {
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-prettier-option",
         "not-use-prettierrc",
         "file.vue"
@@ -80,7 +80,7 @@ describe("getPrettierOption", () => {
 
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-prettier-option",
         "use-prettierrc",
         "file.vue"
@@ -125,7 +125,7 @@ describe("getPrettierOption", () => {
 
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-prettier-option",
         "not-use-prettierrc",
         "file.vue"

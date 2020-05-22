@@ -1,14 +1,41 @@
-import { TSESLint, TSESTree } from "@typescript-eslint/experimental-utils";
+import { AST } from "vue-eslint-parser";
+import { TSESTree } from "@typescript-eslint/experimental-utils";
 
 /**
  * @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/experimental-utils/src/ts-eslint/Rule.ts
  */
+
+interface RuleFix {
+  range: AST.OffsetRange;
+  text: string;
+}
+
+interface RuleFixer {
+  insertTextAfter(nodeOrToken: any, text: string): RuleFix;
+
+  insertTextAfterRange(range: AST.OffsetRange, text: string): RuleFix;
+
+  insertTextBefore(nodeOrToken: any, text: string): RuleFix;
+
+  insertTextBeforeRange(range: AST.OffsetRange, text: string): RuleFix;
+
+  remove(nodeOrToken: any): RuleFix;
+
+  removeRange(range: AST.OffsetRange): RuleFix;
+
+  replaceText(nodeOrToken: any, text: string): RuleFix;
+
+  replaceTextRange(range: AST.OffsetRange, text: string): RuleFix;
+}
+
+type ReportFixFunction = (fixer: RuleFixer) => any;
 
 type ReportDescriptor<TMessageIds> = {
   node: any;
   loc?: TSESTree.SourceLocation | TSESTree.LineAndColumnData;
   messageId: TMessageIds;
   data?: Record<string, any>;
+  fix?: ReportFixFunction | null;
 
   [K: string]: any;
 };
@@ -79,7 +106,4 @@ export interface RuleContext<
   report(descriptor: ReportDescriptor<TMessageIds>): void;
 }
 
-/**
- * eslint-plugin-gridsome traverse only Program.
- */
-export type RuleListener = Pick<TSESLint.RuleListener, "Program">;
+export type RuleListener = any;

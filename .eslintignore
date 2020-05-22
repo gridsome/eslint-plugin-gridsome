@@ -1,5 +1,5 @@
 node_modules/**/*
 log/**/*
 tools/update-readme/_readme/*
-tests/lib/rules/*
+fixtures
 lib/**/*.js

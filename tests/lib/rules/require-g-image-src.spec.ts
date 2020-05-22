@@ -11,16 +11,14 @@ const tester = new RuleTester({
 
 tester.run("require-g-image-src", rule, {
   valid: [
-    {
-      code: `
+    `
       <template>
         <g-image
           src="http://www.example.com/foo.jpg"
           class="foo"
           width="300"
         />
-      </template>`
-    },
+      </template>`,
   ],
   invalid: [
     {
@@ -33,9 +31,9 @@ tester.run("require-g-image-src", rule, {
       </template>`,
       errors: [
         {
-          messageId: 'requireGImageSrc'
-        }
-      ]
-    }
-  ]
+          messageId: "requireGImageSrc",
+        },
+      ],
+    },
+  ],
 });

@@ -11,8 +11,7 @@ const tester = new RuleTester({
 
 tester.run("require-g-link-to", rule, {
   valid: [
-    {
-      code: `
+    `
       <template>
         <g-link
           to="/"
@@ -20,10 +19,8 @@ tester.run("require-g-link-to", rule, {
         >
         link is here
         </g-link>
-      </template>`
-    },
-    {
-      code: `
+      </template>`,
+    `
       <template>
         <g-link
           :to="article.path"
@@ -31,10 +28,8 @@ tester.run("require-g-link-to", rule, {
         >
         link is here
         </g-link>
-      </template>`
-    },
-    {
-      code: `
+      </template>`,
+    `
       <template>
         <g-link
           :to="{ name: 'about' }"
@@ -42,10 +37,8 @@ tester.run("require-g-link-to", rule, {
         >
         link is here
         </g-link>
-      </template>`
-    },
-    {
-      code: `
+      </template>`,
+    `
       <template>
         <g-link
           href="http://www.example.com"
@@ -53,10 +46,8 @@ tester.run("require-g-link-to", rule, {
         >
         link is here
         </g-link>
-      </template>`
-    },
-    {
-      code: `
+      </template>`,
+    `
       <template>
         <g-link
           href="https://www.example.com"
@@ -64,10 +55,8 @@ tester.run("require-g-link-to", rule, {
         >
         link is here
         </g-link>
-      </template>`
-    },
-    {
-      code: `
+      </template>`,
+    `
       <template>
         <g-link
           :href="absolute.url"
@@ -75,8 +64,7 @@ tester.run("require-g-link-to", rule, {
         >
         link is here
         </g-link>
-      </template>`
-    }
+      </template>`,
   ],
   invalid: [
     {
@@ -90,9 +78,9 @@ tester.run("require-g-link-to", rule, {
       </template>`,
       errors: [
         {
-          messageId: "requireGLinkTo"
-        }
-      ]
-    }
-  ]
+          messageId: "requireGLinkTo",
+        },
+      ],
+    },
+  ],
 });

@@ -15,7 +15,7 @@ describe("getIndentInfo", () => {
 
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-indent-info",
         "not-use-prettierrc",
         "file.vue"
@@ -42,7 +42,7 @@ describe("getIndentInfo", () => {
 
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-indent-info",
         "use-prettierrc",
         "set-tab-width",
@@ -68,7 +68,7 @@ describe("getIndentInfo", () => {
 
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-indent-info",
         "use-prettierrc",
         "set-use-tabs",
@@ -94,7 +94,7 @@ describe("getIndentInfo", () => {
 
       const filePath = path.join(
         process.cwd(),
-        "tests/lib/utils/fixture",
+        "tests/lib/utils/fixtures",
         "get-indent-info",
         "use-prettierrc",
         "set-other-option",
