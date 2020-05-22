@@ -26,7 +26,6 @@
   },
   "scripts": {
     "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
-    "test:watch": "mocha tests/lib/rules/*.js --watch",
     "confirm": "eslint ./development**/* --fix --ext .vue  --rulesdir dist/lib/rules",
     "_log:lint": "eslint log/tests/* --rulesdir log/rules",
     "_log:print": "run-s _log:lint > log/log.json",
