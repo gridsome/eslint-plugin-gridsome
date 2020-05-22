@@ -1,4 +1,4 @@
-const { rules } = require("../../lib");
+const { rules } = require("../../dist/lib");
 
 module.exports = {
   title: "eslint-plugin-gridsome",
@@ -16,11 +16,11 @@ module.exports = {
       { text: "User Guide", link: "/user-guide/" },
       { text: "Developer Guide", link: "/developer-guide/" },
       { text: "Rules", link: "/rules/" },
-      { text: "Gridsome", link: "https://gridsome.org/" }
+      { text: "Gridsome", link: "https://gridsome.org/" },
     ],
     sidebar: {
       "/rules/": ["/rules/", ...Object.keys(rules)],
-      "/": ["/introduction/", "/user-guide/", "/developer-guide/", "/rules/"]
-    }
-  }
+      "/": ["/introduction/", "/user-guide/", "/developer-guide/", "/rules/"],
+    },
+  },
 };
