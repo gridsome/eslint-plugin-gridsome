@@ -130,3 +130,4 @@ typings/
 .tool-versions
 /development
 !/development/.gitkeep
+dist

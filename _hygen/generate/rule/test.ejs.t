@@ -1,38 +1,29 @@
 ---
-to: tests/lib/rules/<%= name %>.js
+to: tests/lib/rules/<%= name %>.spec.ts
 ---
-"use strict";
+import { RuleTester } from "../../util";
 
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
-var rule = require("../../../lib/rules/<%= name %>");
-var RuleTester = require("eslint").RuleTester;
+import rule from "../../../lib/rules/<%= name %>";
 
-// ------------------------------------------------------------------------------
-// Settings
-// ------------------------------------------------------------------------------
-var tester = new RuleTester({
+const tester = new RuleTester({
   parser: "vue-eslint-parser",
   parserOptions: {
-    ecmaVersion: 2015
-  }
+    ecmaVersion: 2017,
+  },
 });
 
-// ------------------------------------------------------------------------------
-// Tests
-// ------------------------------------------------------------------------------
 tester.run("<%= name %>", rule, {
   valid: [
-    {
-      code: ``
-    }
+    ``,
   ],
   invalid: [
     {
       code: ``,
-      output: ``,
-      errors: [""]
-    }
-  ]
+      errors: [
+        {
+          messageId: "<%= h.changeCase.camel(name) %>",
+        },
+      ],
+    },
+  ],
 });

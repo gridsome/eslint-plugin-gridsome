@@ -1,13 +1,17 @@
+/** @type import('eslint').Linter.BaseConfig */
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-    es6: true
+  parserOptions: {
+    ecmaVersion: 2017,
+    project: "tsconfig.json",
   },
-  extends: ["eslint:recommended", "plugin:node/recommended", "prettier"],
-  plugins: ["prettier"],
+  extends: ["plugin:@mysticatea/es2017", "plugin:@mysticatea/+eslint-plugin"],
   rules: {
-    "prettier/prettier": "error",
-    "node/no-unpublished-require": ["warn"]
-  }
+    "@mysticatea/prettier": [
+      "error",
+      {
+        tabWidth: 2,
+      },
+    ],
+    "func-style": ["error", "expression"],
+  },
 };
