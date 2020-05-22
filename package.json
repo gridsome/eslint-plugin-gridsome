@@ -25,8 +25,7 @@
     "url": "git+https://github.com/gridsome/eslint-plugin-gridsome.git"
   },
   "scripts": {
-    "test": "mocha tests/lib/rules/*.js",
-    "test:ts": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
+    "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
     "test:watch": "mocha tests/lib/rules/*.js --watch",
     "confirm": "eslint ./development**/* --fix --ext .vue  --rulesdir dist/lib/rules",
     "_log:lint": "eslint log/tests/* --rulesdir log/rules",
