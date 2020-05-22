@@ -16,7 +16,7 @@
   "files": [
     "LICENSE",
     "README.md",
-    "lib",
+    "dist",
     "package.json"
   ],
   "main": "dist/lib/index.js",
