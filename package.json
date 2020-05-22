@@ -42,7 +42,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "release:prepare": "shipjs prepare",
-    "release:trigger": "shipjs trigger"
+    "release:trigger": "shipjs trigger",
+    "typecheck": "npx tsc --project ./tsconfig.build.json --noEmit"
   },
   "dependencies": {
     "@typescript-eslint/experimental-utils": "^2.33.0",
