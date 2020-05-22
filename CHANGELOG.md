@@ -1,3 +1,7 @@
+## [1.4.12](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.4.11...v1.4.12) (2020-05-22)
+
+
+
 ## [1.4.11](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.4.9...v1.4.11) (2020-05-13)
 
 
