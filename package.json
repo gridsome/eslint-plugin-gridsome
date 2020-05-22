@@ -16,18 +16,18 @@
   "files": [
     "LICENSE",
     "README.md",
-    "lib",
+    "dist",
     "package.json"
   ],
-  "main": "lib/index.js",
+  "main": "dist/lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gridsome/eslint-plugin-gridsome.git"
   },
   "scripts": {
-    "test": "mocha tests/lib/rules/*.js",
+    "test": "mocha --require ts-node/register tests/lib/**/*.spec.ts",
     "test:watch": "mocha tests/lib/rules/*.js --watch",
-    "confirm": "eslint ./development --fix --ext .vue  --rulesdir lib/rules",
+    "confirm": "eslint ./development**/* --fix --ext .vue  --rulesdir dist/lib/rules",
     "_log:lint": "eslint log/tests/* --rulesdir log/rules",
     "_log:print": "run-s _log:lint > log/log.json",
     "log": "npm run _log:print --silent",
@@ -41,18 +41,22 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "release:prepare": "shipjs prepare",
-    "release:trigger": "shipjs trigger"
+    "release:trigger": "shipjs trigger",
+    "typecheck": "npx tsc --project ./tsconfig.build.json --noEmit"
   },
   "dependencies": {
+    "@typescript-eslint/experimental-utils": "^2.33.0",
     "prettier": "^2.0.5",
-    "vue-eslint-parser": "^7.0.0"
+    "vue-eslint-parser": "^7.1.0"
   },
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^13.0.0",
+    "@types/chai": "^4.2.11",
     "@types/eslint": "^6.8.1",
+    "@types/mocha": "^7.0.2",
     "@types/prettier": "^2.0.0",
-    "@typescript-eslint/experimental-utils": "^2.33.0",
     "all-contributors-cli": "^6.14.2",
+    "chai": "^4.2.0",
     "change-case": "^4.1.1",
     "commitizen": "^4.1.2",
     "cz-conventional-changelog": "^3.2.0",

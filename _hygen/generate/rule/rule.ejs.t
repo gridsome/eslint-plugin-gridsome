@@ -1,50 +1,39 @@
 ---
-to: lib/rules/<%= name %>.js
+to: lib/rules/<%= name %>.ts
 ---
 /**
  * @author <%= author %>
  * @copyright <%= new Date().getFullYear() %> <%= author %>. All rights reserved.
  * See LICENSE file in root directory for full license.
  */
-"use strict";
+ 
+import { AST } from "vue-eslint-parser";
+import { createRule, defineTemplateBodyVisitor } from "../utils";
 
-// ------------------------------------------------------------------------------
-// Requirements
-// ------------------------------------------------------------------------------
+type Options = {};
 
-// ------------------------------------------------------------------------------
-// Settings
-// ------------------------------------------------------------------------------
+const defaultOptions: [Options] = [{}];
 
-module.exports = {
+type MessageIds = "<%= h.changeCase.camel(name) %>";
+export = createRule<[Options], MessageIds>({
+  name: "<%= name %>",
   meta: {
-    type: "",
     docs: {
       description: "<%= description %>",
       category: "",
       recommended: false,
-      url: "<%= h.REPO_URL() %>/blob/master/docs/rules/<%= name %>.md",
     },
-    fixable: "",
+    type: "",
+    messages: {
+      <%= h.changeCase.camel(name) %>:
+        "",
+    },
     schema: [],
-    deprecated: false,
-    replacedBy: []
   },
-  create(context) {}
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  defaultOptions,
+  create(context) {
+    return defineTemplateBodyVisitor(context, {
+      
+    });
+  },
+});

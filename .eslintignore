@@ -1,3 +1,5 @@
 node_modules/**/*
 log/**/*
 tools/update-readme/_readme/*
+fixtures
+lib/**/*.js
