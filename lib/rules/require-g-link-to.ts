@@ -1,3 +1,9 @@
+/**
+ * @author tyankatsu
+ * @copyright 2019 tyankatsu. All rights reserved.
+ * See LICENSE file in root directory for full license.
+ */
+
 import { AST } from "vue-eslint-parser";
 import {
   createRule,
