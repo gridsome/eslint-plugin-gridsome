@@ -28,7 +28,7 @@ const exportSection = (ruleNames: RuleMetaData["name"][]) => {
   ${footer}
   `;
 };
-export const createRulesList = (rulesMetaData: RuleMetaData[]) => {
+export const createRulesList = async (rulesMetaData: RuleMetaData[]) => {
   const ruleNames = rulesMetaData.map((ruleMetaData) => ruleMetaData.name);
 
   const content = `
@@ -37,5 +37,5 @@ export const createRulesList = (rulesMetaData: RuleMetaData[]) => {
   ${exportSection(ruleNames)}
   `;
 
-  return { list: formatTypescript(content) };
+  return { list: await formatTypescript(content) };
 };
