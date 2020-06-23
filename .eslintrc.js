@@ -3,7 +3,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2017,
     project: "tsconfig.json",
+    sourceType: "module",
   },
+
   extends: ["plugin:@mysticatea/es2017", "plugin:@mysticatea/+eslint-plugin"],
   rules: {
     "@mysticatea/prettier": [
