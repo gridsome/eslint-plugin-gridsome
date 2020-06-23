@@ -1,16 +1,17 @@
 name: Release
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+    types:
+      - closed
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'releases/v')
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: develop
           fetch-depth: 0
           
       - uses: actions/cache@v1
@@ -30,10 +31,8 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
-      
-      - run: git fetch
 
-      - run: npm run release:trigger
+      - run: npx shipjs trigger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
