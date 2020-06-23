@@ -1,3 +1,12 @@
+## [1.4.13](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.4.12...v1.4.13) (2020-06-23)
+
+
+### Features
+
+* follow ESLint v7 ([59eb4fa](https://github.com/gridsome/eslint-plugin-gridsome/commit/59eb4fada38fea400201051f3551593ce0eac757))
+
+
+
 ## [1.4.12](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.4.11...v1.4.12) (2020-05-22)
 
 
