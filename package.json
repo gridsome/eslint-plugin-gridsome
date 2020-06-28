@@ -46,7 +46,7 @@
     "update": "ts-node tools/update.ts"
   },
   "lint-staged": {
-    "*.js": [
+    "*.ts": [
       "prettier --write",
       "eslint --fix"
     ],
