@@ -5,6 +5,10 @@ type Option = Omit<prettier.SupportOption, "name"> & {
   name: PrettierSupportOptionName;
 };
 
+type PrettierOptions = {
+  [key in PrettierSupportOptionName]: prettier.SupportOption["default"];
+};
+
 const prettierOptions = prettier.getSupportInfo().options as Option[];
 
 /**
@@ -15,9 +19,7 @@ export const getPrettierDefaultOption = prettierOptions.reduce(
     acc[option.name] = option.default;
     return acc;
   },
-  {} as {
-    [key in PrettierSupportOptionName]: prettier.SupportOption["default"];
-  }
+  {} as PrettierOptions
 );
 
 // /**
@@ -26,11 +28,7 @@ export const getPrettierDefaultOption = prettierOptions.reduce(
 export const getPrettierRcOption = (filePath: string) =>
   prettier.resolveConfig.sync(filePath, {
     editorconfig: true,
-  }) as
-    | {
-        [key in PrettierSupportOptionName]: prettier.SupportOption["default"];
-      }
-    | null;
+  }) as PrettierOptions | null;
 
 // /**
 //  * Get option merged getPrettierDefaultOption and getPrettierRcOption
