@@ -1,26 +1,18 @@
 import prettier from "prettier";
-import { PrettierSupportOptionName } from "./types";
-
-type Option = Omit<prettier.SupportOption, "name"> & {
-  name: PrettierSupportOptionName;
-};
 
 type PrettierOptions = {
-  [key in PrettierSupportOptionName]: prettier.SupportOption["default"];
+  [key: string]: prettier.SupportOption["default"];
 };
-
-const prettierOptions = prettier.getSupportInfo().options as Option[];
 
 /**
  * Get Prettier's default option
  */
-export const getPrettierDefaultOption = prettierOptions.reduce(
-  (acc, option) => {
+export const getPrettierDefaultOption = prettier
+  .getSupportInfo()
+  .options.reduce<PrettierOptions>((acc, option) => {
     acc[option.name] = option.default;
     return acc;
-  },
-  {} as PrettierOptions
-);
+  }, {});
 
 // /**
 //  * Get option from .prettierrc
