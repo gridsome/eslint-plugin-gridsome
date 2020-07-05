@@ -1,14 +1,14 @@
 <template></template>
 <page-query>
-  query Blog {
-    allWordPressPost(limit: 5) {
-      edges {
-        node {
-          id
+query Blog {
+  allWordPressPost(limit: 5) {
+    edges {
+      node {
+        id
 
-          title
-        }
+        title
       }
     }
   }
+}
 </page-query>

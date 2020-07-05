@@ -10,8 +10,9 @@ import {
   getPrettierDefaultOption,
   getPrettierRcOption,
   getMergedPrettierOption,
-  getIndentInfo,
+  getCodeWrapIndentInfo,
   NodeNames,
+  OverridePrettierOption,
 } from "../utils";
 
 import prettier from "prettier";
@@ -19,7 +20,9 @@ import prettier from "prettier";
 const prettierParser = "graphql";
 const LINES = /[^\r\n\u2028\u2029]+(?:$|\r\n|[\r\n\u2028\u2029])|\s/gu;
 
-type Options = {};
+type Options = {
+  overridePrettierOption?: OverridePrettierOption;
+};
 
 const defaultOptions: [Options] = [{}];
 
@@ -38,10 +41,26 @@ export = createRule<[Options], MessageIds>({
     messages: {
       formatQueryBlock: "{{ name }} code format is incorrect",
     },
-    schema: [],
+    schema: [
+      {
+        type: "object",
+        properties: {
+          overridePrettierOption: {
+            type: "object",
+            items: [
+              { tabWidth: "number" },
+              { useTabs: "boolean" },
+              { vueIndentScriptAndStyle: "boolean" },
+            ],
+          },
+        },
+      },
+    ],
   },
   defaultOptions,
   create(context) {
+    const overridePrettierOption = context.options[0]?.overridePrettierOption;
+
     const sourceCode = context.getSourceCode();
     const filePath = context.getFilename();
 
@@ -50,8 +69,11 @@ export = createRule<[Options], MessageIds>({
       getPrettierRcOption(filePath)
     );
 
-    const { baseIndent, indentChar } = getIndentInfo(mergedPrettierOption);
-    const indent = indentChar.repeat(baseIndent);
+    const { indentRepeatTime, indentChar } = getCodeWrapIndentInfo(
+      mergedPrettierOption,
+      overridePrettierOption
+    );
+    const indent = indentChar.repeat(indentRepeatTime);
 
     return {
       Program(node: AST.ESLintProgram) {
@@ -76,15 +98,13 @@ export = createRule<[Options], MessageIds>({
 
             const code = sourceCode.text.slice(...codeRange);
 
-            const prettierConfig = getPrettierRcOption(filePath);
+            const prettierConfig = {
+              ...getPrettierRcOption(filePath),
+              ...overridePrettierOption,
+            };
 
             const formattedCode = prettier
-              .format(
-                code,
-                Object.assign({}, prettierConfig, {
-                  parser: prettierParser,
-                })
-              )
+              .format(code, { ...prettierConfig, parser: prettierParser })
               .trim();
 
             let lines = formattedCode.match(LINES);
