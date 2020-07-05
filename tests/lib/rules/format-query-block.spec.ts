@@ -12,9 +12,8 @@ const tester = new RuleTester({
   },
 });
 
-
-const loadFixture = (filePath: string, isOutputFile: boolean = false) => {
-  if(isOutputFile) {
+const loadFixture = (filePath: string, isOutputFile = false) => {
+  if (isOutputFile) {
     return {
       code: fs.readFileSync(
         path.join(
@@ -27,8 +26,8 @@ const loadFixture = (filePath: string, isOutputFile: boolean = false) => {
           `tests/lib/rules/fixtures/format-query-block/${filePath}/output.vue`
         ),
         { encoding: "utf8" }
-      )
-    }
+      ),
+    };
   }
 
   return {
@@ -38,11 +37,15 @@ const loadFixture = (filePath: string, isOutputFile: boolean = false) => {
       ),
       { encoding: "utf8" }
     ),
-  }
+  };
 };
 
 tester.run("format-query-block", rule, {
-  valid: [loadFixture("valid/01"), loadFixture("valid/02"), loadFixture("valid/03")],
+  valid: [
+    loadFixture("valid/01"),
+    loadFixture("valid/02"),
+    loadFixture("valid/03"),
+  ],
 
   // @todo add test case that exist .prettierrc or not exist, if we know how to test that
   invalid: [
@@ -64,6 +67,22 @@ tester.run("format-query-block", rule, {
     },
     {
       ...loadFixture("invalid/03", true),
+      errors: [
+        {
+          messageId: "formatQueryBlock",
+        },
+      ],
+    },
+    {
+      ...loadFixture("invalid/04", true),
+      options: [
+        {
+          overridePrettierOption: {
+            vueIndentScriptAndStyle: true,
+            tabWidth: 5,
+          },
+        },
+      ],
       errors: [
         {
           messageId: "formatQueryBlock",

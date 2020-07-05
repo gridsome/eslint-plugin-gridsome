@@ -2,18 +2,24 @@
 module.exports = {
   parserOptions: {
     ecmaVersion: 2017,
-    project: "tsconfig.json",
     sourceType: "module",
   },
+  parser: "@typescript-eslint/parser",
+  env: {
+    node: true,
+  },
 
-  extends: ["plugin:@mysticatea/es2017", "plugin:@mysticatea/+eslint-plugin"],
+  extends: [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+  ],
+  plugins: ["prettier"],
   rules: {
-    "@mysticatea/prettier": [
-      "error",
-      {
-        tabWidth: 2,
-      },
-    ],
+    "prettier/prettier": "error",
     "func-style": ["error", "expression"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
 };
