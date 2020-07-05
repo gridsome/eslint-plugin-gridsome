@@ -6,7 +6,6 @@ type RuleTesterConfig = Omit<TSESLint.RuleTesterConfig, "parser"> & {
   parser: Parser;
 };
 
-/* eslint-disable @mysticatea/ts/explicit-member-accessibility, @mysticatea/ts/no-parameter-properties */
 export class RuleTester extends TSESLint.RuleTester {
   constructor(protected config: RuleTesterConfig) {
     super({
