@@ -24,7 +24,7 @@ type PrettierOptions = {
 /**
  * Get indent information
  */
-export const getIndentInfo = (
+export const getCodeWrapIndentInfo = (
   mergedPrettierOptions: MergedPrettierOption,
   eslintOption?: OverridePrettierOption
 ) => {

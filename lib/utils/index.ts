@@ -6,7 +6,7 @@ export * from "./parser-services";
 // Prettier
 // ====================================================
 export * from "./get-prettier-option";
-export * from "./get-indent-info";
+export * from "./get-code-wrap-indent-info";
 
 // ====================================================
 // AST

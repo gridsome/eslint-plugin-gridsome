@@ -1,4 +1,4 @@
-import { getIndentInfo } from "../../../lib/utils/get-indent-info";
+import { getCodeWrapIndentInfo } from "../../../lib/utils/get-code-wrap-indent-info";
 import path from "path";
 
 import {
@@ -14,7 +14,7 @@ const indent = {
   none: "",
 };
 
-describe("getIndentInfo", () => {
+describe("getCodeWrapIndentInfo", () => {
   describe("not use prettierrc", () => {
     it("when not use prettierrc, it means vueIndentScriptAndStyle is false. So indentRepeatTime is 0, and indentChar is empty string", () => {
       const prettierDefaultOptions = getPrettierDefaultOption;
@@ -22,7 +22,7 @@ describe("getIndentInfo", () => {
       const filePath = path.join(
         process.cwd(),
         "tests/lib/utils/fixtures",
-        "get-indent-info",
+        "get-code-wrap-indent-info",
         "not-use-prettierrc",
         "file.vue"
       );
@@ -33,7 +33,7 @@ describe("getIndentInfo", () => {
         prettierRcOptions
       );
 
-      const result = getIndentInfo(mergedPrettierOption);
+      const result = getCodeWrapIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
         indentRepeatTime: 0,
@@ -49,7 +49,7 @@ describe("getIndentInfo", () => {
       const filePath = path.join(
         process.cwd(),
         "tests/lib/utils/fixtures",
-        "get-indent-info",
+        "get-code-wrap-indent-info",
         "use-prettierrc",
         "set-tab-width",
         "file.vue"
@@ -61,7 +61,7 @@ describe("getIndentInfo", () => {
         prettierRcOptions
       );
 
-      const result = getIndentInfo(mergedPrettierOption);
+      const result = getCodeWrapIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
         indentRepeatTime: 4,
@@ -75,7 +75,7 @@ describe("getIndentInfo", () => {
       const filePath = path.join(
         process.cwd(),
         "tests/lib/utils/fixtures",
-        "get-indent-info",
+        "get-code-wrap-indent-info",
         "use-prettierrc",
         "set-use-tabs",
         "file.vue"
@@ -87,7 +87,7 @@ describe("getIndentInfo", () => {
         prettierRcOptions
       );
 
-      const result = getIndentInfo(mergedPrettierOption);
+      const result = getCodeWrapIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
         indentRepeatTime: 1,
@@ -101,7 +101,7 @@ describe("getIndentInfo", () => {
       const filePath = path.join(
         process.cwd(),
         "tests/lib/utils/fixtures",
-        "get-indent-info",
+        "get-code-wrap-indent-info",
         "use-prettierrc",
         "set-other-option",
         "file.vue"
@@ -113,7 +113,7 @@ describe("getIndentInfo", () => {
         prettierRcOptions
       );
 
-      const result = getIndentInfo(mergedPrettierOption);
+      const result = getCodeWrapIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
         indentRepeatTime: 0,
