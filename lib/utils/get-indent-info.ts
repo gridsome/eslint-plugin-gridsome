@@ -6,13 +6,16 @@ import { PrettierSupportOptionName } from "./types";
 const indent = {
   space: " ",
   tab: "\t",
+  none: "",
 };
 
-export type OverridePrettierOption = {
-  tabWidth: number;
-  useTabs: boolean;
-  vueIndentScriptAndStyle: boolean;
-};
+export type OverridePrettierOption =
+  | {
+      tabWidth: number;
+      useTabs: boolean;
+      vueIndentScriptAndStyle: boolean;
+    }
+  | undefined;
 
 type PrettierOptions = {
   [key in PrettierSupportOptionName]: prettier.SupportOption["default"];
@@ -26,20 +29,31 @@ export const getIndentInfo = (
   eslintOption?: OverridePrettierOption
 ) => {
   const defaultInfo = {
-    baseIndent: 0,
+    indentRepeatTime: 0,
     indentChar: indent.space,
   };
 
-  const { tabWidth, useTabs } = mergedPrettierOptions as PrettierOptions;
+  const prettierOptions = mergedPrettierOptions as PrettierOptions;
+
+  const tabWidth = eslintOption?.tabWidth || prettierOptions.tabWidth;
+  const useTabs = eslintOption?.useTabs ?? prettierOptions.useTabs;
+  const vueIndentScriptAndStyle =
+    eslintOption?.vueIndentScriptAndStyle ??
+    prettierOptions.vueIndentScriptAndStyle;
 
   const result = {
-    baseIndent: tabWidth as number,
+    indentRepeatTime: tabWidth as number,
     indentChar: defaultInfo.indentChar,
   };
 
   if (useTabs) {
-    result.baseIndent = 1;
+    result.indentRepeatTime = 1;
     result.indentChar = indent.tab;
+  }
+
+  if (!vueIndentScriptAndStyle) {
+    result.indentRepeatTime = 0;
+    result.indentChar = indent.none;
   }
 
   return { ...defaultInfo, ...result };

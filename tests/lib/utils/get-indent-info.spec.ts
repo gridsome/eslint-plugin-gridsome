@@ -8,9 +8,15 @@ import {
 } from "../../../lib/utils/get-prettier-option";
 import { expect } from "chai";
 
+const indent = {
+  space: " ",
+  tab: "\t",
+  none: "",
+};
+
 describe("getIndentInfo", () => {
   describe("not use prettierrc", () => {
-    it("when not use prettierrc, baseIndent is default tabWidth value indentChar is space", () => {
+    it("when not use prettierrc, it means vueIndentScriptAndStyle is false. So indentRepeatTime is 0, and indentChar is empty string", () => {
       const prettierDefaultOptions = getPrettierDefaultOption;
 
       const filePath = path.join(
@@ -30,14 +36,14 @@ describe("getIndentInfo", () => {
       const result = getIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
-        baseIndent: 2,
-        indentChar: " ",
+        indentRepeatTime: 0,
+        indentChar: indent.none,
       });
     });
   });
 
   describe("use prettierrc", () => {
-    it("when tabWidth is 4, baseIndent is 4 indentChar is space", () => {
+    it("when tabWidth is 4, indentRepeatTime is 4 indentChar is space", () => {
       const prettierDefaultOptions = getPrettierDefaultOption;
 
       const filePath = path.join(
@@ -58,12 +64,12 @@ describe("getIndentInfo", () => {
       const result = getIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
-        baseIndent: 4,
-        indentChar: " ",
+        indentRepeatTime: 4,
+        indentChar: indent.space,
       });
     });
 
-    it("when useTabs is true, baseIndent is fixed 1 indentChar is tab", () => {
+    it("when useTabs is true, indentRepeatTime is fixed 1 indentChar is tab", () => {
       const prettierDefaultOptions = getPrettierDefaultOption;
 
       const filePath = path.join(
@@ -84,12 +90,12 @@ describe("getIndentInfo", () => {
       const result = getIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
-        baseIndent: 1,
-        indentChar: "\t",
+        indentRepeatTime: 1,
+        indentChar: indent.tab,
       });
     });
 
-    it("when useTabs and tabWidth is not set value, baseIndent and indentChar are treated same as not use prettierrc", () => {
+    it("when not set value of useTabs, tabWidth, and vueIndentScriptAndStyle, indentRepeatTime is 0, and indentChar is empty string", () => {
       const prettierDefaultOptions = getPrettierDefaultOption;
 
       const filePath = path.join(
@@ -110,8 +116,8 @@ describe("getIndentInfo", () => {
       const result = getIndentInfo(mergedPrettierOption);
 
       expect(result).to.deep.equal({
-        baseIndent: 2,
-        indentChar: " ",
+        indentRepeatTime: 0,
+        indentChar: indent.none,
       });
     });
   });

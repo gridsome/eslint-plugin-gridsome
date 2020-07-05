@@ -1,4 +1,5 @@
 {
   "tabWidth": 200,
-  "useTabs": true
+  "useTabs": true,
+  "vueIndentScriptAndStyle": true
 }
