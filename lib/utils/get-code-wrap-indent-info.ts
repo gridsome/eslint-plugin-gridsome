@@ -11,9 +11,9 @@ const indent = {
 
 export type OverridePrettierOption =
   | {
-      tabWidth: number;
-      useTabs: boolean;
-      vueIndentScriptAndStyle: boolean;
+      tabWidth?: number;
+      useTabs?: boolean;
+      vueIndentScriptAndStyle?: boolean;
     }
   | undefined;
 

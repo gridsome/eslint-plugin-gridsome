@@ -40,6 +40,35 @@ describe("getCodeWrapIndentInfo", () => {
         indentChar: indent.none,
       });
     });
+
+    it("when not use prettierrc, follow option value if set eslint option", () => {
+      const prettierDefaultOptions = getPrettierDefaultOption;
+
+      const filePath = path.join(
+        process.cwd(),
+        "tests/lib/utils/fixtures",
+        "get-code-wrap-indent-info",
+        "not-use-prettierrc",
+        "file.vue"
+      );
+      const prettierRcOptions = getPrettierRcOption(filePath);
+
+      const mergedPrettierOption = getMergedPrettierOption(
+        prettierDefaultOptions,
+        prettierRcOptions
+      );
+
+      const eslintOption = {
+        vueIndentScriptAndStyle: true,
+      };
+
+      const result = getCodeWrapIndentInfo(mergedPrettierOption, eslintOption);
+
+      expect(result).to.deep.equal({
+        indentRepeatTime: 2,
+        indentChar: indent.space,
+      });
+    });
   });
 
   describe("use prettierrc", () => {
@@ -94,16 +123,18 @@ describe("getCodeWrapIndentInfo", () => {
         indentChar: indent.tab,
       });
     });
+  });
 
-    it("when not set value of useTabs, tabWidth, and vueIndentScriptAndStyle, indentRepeatTime is 0, and indentChar is empty string", () => {
+  describe("override-prettier-option", () => {
+    it("when not use prettierrc and use eslint option, override value of indentRepeatTime and indentChar", () => {
       const prettierDefaultOptions = getPrettierDefaultOption;
 
       const filePath = path.join(
         process.cwd(),
         "tests/lib/utils/fixtures",
         "get-code-wrap-indent-info",
-        "use-prettierrc",
-        "set-other-option",
+        "override-prettier-option",
+        "not-use-prettierrc",
         "file.vue"
       );
       const prettierRcOptions = getPrettierRcOption(filePath);
@@ -113,11 +144,47 @@ describe("getCodeWrapIndentInfo", () => {
         prettierRcOptions
       );
 
-      const result = getCodeWrapIndentInfo(mergedPrettierOption);
+      const eslintOption = {
+        vueIndentScriptAndStyle: true,
+        tabWidth: 10,
+      };
+
+      const result = getCodeWrapIndentInfo(mergedPrettierOption, eslintOption);
 
       expect(result).to.deep.equal({
-        indentRepeatTime: 0,
-        indentChar: indent.none,
+        indentRepeatTime: 10,
+        indentChar: indent.space,
+      });
+    });
+
+    it("when use prettierrc and use eslint option, follow prettierrc option and then override eslint option", () => {
+      const prettierDefaultOptions = getPrettierDefaultOption;
+
+      const filePath = path.join(
+        process.cwd(),
+        "tests/lib/utils/fixtures",
+        "get-code-wrap-indent-info",
+        "override-prettier-option",
+        "use-prettierrc",
+        "file.vue"
+      );
+      const prettierRcOptions = getPrettierRcOption(filePath);
+
+      const mergedPrettierOption = getMergedPrettierOption(
+        prettierDefaultOptions,
+        prettierRcOptions
+      );
+
+      const eslintOption = {
+        vueIndentScriptAndStyle: true,
+        tabWidth: 4,
+      };
+
+      const result = getCodeWrapIndentInfo(mergedPrettierOption, eslintOption);
+
+      expect(result).to.deep.equal({
+        indentRepeatTime: 4,
+        indentChar: indent.space,
       });
     });
   });
