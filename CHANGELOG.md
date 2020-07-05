@@ -1,3 +1,12 @@
+# [1.5.0](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.4.13...v1.5.0) (2020-07-05)
+
+
+### Features
+
+* **format-query-block:** add option overridePrettierOption ([#104](https://github.com/gridsome/eslint-plugin-gridsome/issues/104)) ([1110fa7](https://github.com/gridsome/eslint-plugin-gridsome/commit/1110fa796d1d934b00c91b37037960f70df252eb)), closes [#60](https://github.com/gridsome/eslint-plugin-gridsome/issues/60)
+
+
+
 ## [1.4.13](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.4.12...v1.4.13) (2020-06-23)
 
 
