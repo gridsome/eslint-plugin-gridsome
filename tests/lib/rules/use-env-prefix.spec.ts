@@ -6,14 +6,43 @@ const tester = new RuleTester({
   parser: "vue-eslint-parser",
   parserOptions: {
     ecmaVersion: 2017,
+    sourceType: "module",
   },
 });
 
 tester.run("use-env-prefix", rule, {
-  valid: [``],
+  valid: [
+    {
+      filename: "Index.vue",
+      code: `
+      <template></template>
+      <script>
+        export default {
+          data () {
+            return {
+              url: process.env.GRIDSOME_API_URL
+            }
+          }
+        }
+      </script>
+      `,
+    },
+  ],
   invalid: [
     {
-      code: ``,
+      filename: "Index.vue",
+      code: `
+      <template></template>
+      <script>
+        export default {
+          data () {
+            return {
+              url: process.env.API_URL
+            }
+          }
+        }
+      </script>
+      `,
       errors: [
         {
           messageId: "useEnvPrefix",
