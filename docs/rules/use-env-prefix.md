@@ -16,6 +16,7 @@ If you want to know more information, see: [Environment variables](https://grids
 
 ```html
 <template></template>
+
 <script>
   export default {
     data() {
@@ -31,6 +32,7 @@ If you want to know more information, see: [Environment variables](https://grids
 
 ```html
 <template></template>
+
 <script>
   export default {
     data() {
@@ -44,4 +46,21 @@ If you want to know more information, see: [Environment variables](https://grids
 
 ## :wrench: Options
 
-Nothing.
+```json
+{
+  "gridsome/use-env-prefix": [
+    "warn",
+    {
+      {
+        "pathsForBrowserfile": ["src/**/*"],
+        "envPath": ".env",
+      },
+    }
+  ]
+}
+```
+
+- `pathsForBrowserfile` (`string[]`) ... This option can specify paths for browser.
+  - default ... ["src/**/*"]
+- `envPath` (`string`) ... This option can specify path for env file.
+  - default ... ".env"

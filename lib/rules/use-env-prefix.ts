@@ -4,13 +4,18 @@
  * See LICENSE file in root directory for full license.
  */
 import { AST } from "vue-eslint-parser";
-import { createRule } from "../utils";
-
-type Options = {};
-
-const defaultOptions: [Options] = [{}];
+import minimatch from "minimatch";
+import { createRule, Env } from "../utils";
+import * as Fs from "fs";
 
 const PREFIX = "GRIDSOME_";
+
+type Options = {
+  pathsForBrowserfile?: string[];
+  envPath?: string;
+};
+
+const defaultOptions: [Options] = [{}];
 
 type MessageIds = "useEnvPrefix";
 export = createRule<[Options], MessageIds>({
@@ -23,34 +28,60 @@ export = createRule<[Options], MessageIds>({
     },
     type: "problem",
     messages: {
-      useEnvPrefix:
-        "`{{ processEnv }}` has possible error. If you have some errors around process.env, consider using `{{ AddedPrefixProcessEnv }}`.",
+      useEnvPrefix: "Use `{{ addedPrefixEnv }}`.",
     },
-    // TODO: User are able to set `.env` file path
-    schema: [],
+    schema: [
+      {
+        type: "object",
+        properties: {
+          pathsForBrowserfile: {
+            type: "array",
+            items: {
+              type: "string",
+            },
+          },
+          envPath: {
+            type: "string",
+          },
+        },
+      },
+    ],
   },
   defaultOptions,
   create(context) {
-    // TODO: only check `.vue`
+    const filename = context.getFilename();
+
+    const pathsForBrowserfileOption = context.options[0]
+      ?.pathsForBrowserfile || ["src/**/*"];
+    const envPathOption = context.options[0]?.envPath || ".env";
+
+    const isClientfile = pathsForBrowserfileOption.some((clientPath) =>
+      minimatch(filename, clientPath)
+    );
+
+    const envSource = Fs.readFileSync(envPathOption, { encoding: "utf8" });
+    const parsedEnvSource = new Env(envSource).parse();
 
     return {
       "MemberExpression[object.object.name='process'][object.property.name='env']"(
         node: AST.ESLintMemberExpression
       ) {
+        if (!isClientfile) return;
         if (node.property.type !== "Identifier") return;
         if (node.property.name.includes(PREFIX)) return;
 
-        const processEnv = node.property.name;
+        const envName = node.property.name;
 
-        context.report({
-          node,
-          loc: node.loc,
-          messageId: "useEnvPrefix",
-          data: {
-            processEnv,
-            AddedPrefixProcessEnv: `${PREFIX}${processEnv}`,
-          },
-        });
+        if (parsedEnvSource.has(envName)) {
+          context.report({
+            node,
+            loc: node.loc,
+            messageId: "useEnvPrefix",
+            data: {
+              addedPrefixEnv: `${PREFIX}${envName}`,
+            },
+          });
+        }
       },
     };
   },

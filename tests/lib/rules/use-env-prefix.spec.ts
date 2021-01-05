@@ -23,22 +23,22 @@ tester.run("use-env-prefix", rule, {
       }),
       options: [
         {
-          clientPaths: ["src/**/*"],
+          pathsForBrowserfile: ["src/**/*"],
           envPath: "tests/lib/rules/fixtures/use-env-prefix/valid/01/.env",
         },
       ],
     },
     {
-      filename: "gridsome.config.js",
+      filename: "src/client.js",
       ...loadFixture({
         fixtureDirectory: "valid/02",
         filenames: {
-          code: "gridsome.config.js",
+          code: "client.js",
         },
       }),
       options: [
         {
-          clientPaths: ["src/**/*"],
+          pathsForBrowserfile: ["src/**/*"],
           envPath: "tests/lib/rules/fixtures/use-env-prefix/valid/02/.env",
         },
       ],
@@ -52,11 +52,34 @@ tester.run("use-env-prefix", rule, {
       }),
       options: [
         {
-          clientPaths: ["src/**/*"],
+          pathsForBrowserfile: ["src/**/*"],
           envPath: "tests/lib/rules/fixtures/use-env-prefix/invalid/01/.env",
         },
       ],
       errors: [
+        {
+          messageId: "useEnvPrefix",
+        },
+      ],
+    },
+    {
+      filename: "src/client.js",
+      ...loadFixture({
+        fixtureDirectory: "invalid/02",
+        filenames: {
+          code: "client.js",
+        },
+      }),
+      options: [
+        {
+          pathsForBrowserfile: ["src/**/*"],
+          envPath: "tests/lib/rules/fixtures/use-env-prefix/invalid/02/.env",
+        },
+      ],
+      errors: [
+        {
+          messageId: "useEnvPrefix",
+        },
         {
           messageId: "useEnvPrefix",
         },

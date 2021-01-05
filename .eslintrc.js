@@ -21,5 +21,8 @@ module.exports = {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
+    "no-irregular-whitespace": ["error", {
+      "skipRegExps": true
+    }]
   },
 };
