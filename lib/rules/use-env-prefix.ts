@@ -28,7 +28,7 @@ export = createRule<[Options], MessageIds>({
     },
     type: "problem",
     messages: {
-      useEnvPrefix: "Use `{{ addedPrefixEnv }}`.",
+      useEnvPrefix: "Use `process.env.{{ addedPrefixEnv }}`.",
     },
     schema: [
       {
