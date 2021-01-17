@@ -5,7 +5,7 @@
  */
 import { AST } from "vue-eslint-parser";
 import minimatch from "minimatch";
-import { createRule, Env } from "../utils";
+import { createRule, Env, getPathFromProjectRoot } from "../utils";
 import * as Fs from "fs";
 
 const PREFIX = "GRIDSOME_";
@@ -49,14 +49,14 @@ export = createRule<[Options], MessageIds>({
   },
   defaultOptions,
   create(context) {
-    const filename = context.getFilename();
+    const path = getPathFromProjectRoot(context.getFilename(), process.cwd());
 
     const pathsForBrowserfileOption = context.options[0]
       ?.pathsForBrowserfile || ["src/**/*"];
     const envPathOption = context.options[0]?.envPath || ".env";
 
     const isClientfile = pathsForBrowserfileOption.some((clientPath) =>
-      minimatch(filename, clientPath)
+      minimatch(path, clientPath)
     );
 
     const envSource = Fs.readFileSync(envPathOption, { encoding: "utf8" });
