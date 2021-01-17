@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.5.2...v1.6.0) (2021-01-17)
+
+
+### Features
+
+* add `use-env-prefix` rules ([#113](https://github.com/gridsome/eslint-plugin-gridsome/issues/113)) ([134ab7e](https://github.com/gridsome/eslint-plugin-gridsome/commit/134ab7ea87031af349f829a906fa4541f88d1af4))
+
+
+
 ## [1.5.2](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.5.1...v1.5.2) (2020-12-22)
 
 
