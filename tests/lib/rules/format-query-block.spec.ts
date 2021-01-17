@@ -1,7 +1,4 @@
-import path from "path";
-import fs from "fs";
-
-import { RuleTester } from "../../util";
+import { RuleTester, loadFixtureCreator } from "../../util";
 
 import rule from "../../../lib/rules/format-query-block";
 
@@ -12,45 +9,24 @@ const tester = new RuleTester({
   },
 });
 
-const loadFixture = (filePath: string, isOutputFile = false) => {
-  if (isOutputFile) {
-    return {
-      code: fs.readFileSync(
-        path.join(
-          `tests/lib/rules/fixtures/format-query-block/${filePath}/code.vue`
-        ),
-        { encoding: "utf8" }
-      ),
-      output: fs.readFileSync(
-        path.join(
-          `tests/lib/rules/fixtures/format-query-block/${filePath}/output.vue`
-        ),
-        { encoding: "utf8" }
-      ),
-    };
-  }
-
-  return {
-    code: fs.readFileSync(
-      path.join(
-        `tests/lib/rules/fixtures/format-query-block/${filePath}/code.vue`
-      ),
-      { encoding: "utf8" }
-    ),
-  };
-};
+const loadFixture = loadFixtureCreator(
+  "tests/lib/rules/fixtures/format-query-block"
+);
 
 tester.run("format-query-block", rule, {
   valid: [
-    loadFixture("valid/01"),
-    loadFixture("valid/02"),
-    loadFixture("valid/03"),
+    loadFixture({ fixtureDirectory: "valid/01" }),
+    loadFixture({ fixtureDirectory: "valid/02" }),
+    loadFixture({ fixtureDirectory: "valid/03" }),
   ],
 
   // @todo add test case that exist .prettierrc or not exist, if we know how to test that
   invalid: [
     {
-      ...loadFixture("invalid/01", true),
+      ...loadFixture({
+        fixtureDirectory: "invalid/01",
+        hasOutputFile: true,
+      }),
       errors: [
         {
           messageId: "formatQueryBlock",
@@ -58,7 +34,10 @@ tester.run("format-query-block", rule, {
       ],
     },
     {
-      ...loadFixture("invalid/02", true),
+      ...loadFixture({
+        fixtureDirectory: "invalid/02",
+        hasOutputFile: true,
+      }),
       errors: [
         {
           messageId: "formatQueryBlock",
@@ -66,7 +45,10 @@ tester.run("format-query-block", rule, {
       ],
     },
     {
-      ...loadFixture("invalid/03", true),
+      ...loadFixture({
+        fixtureDirectory: "invalid/03",
+        hasOutputFile: true,
+      }),
       errors: [
         {
           messageId: "formatQueryBlock",
@@ -74,7 +56,10 @@ tester.run("format-query-block", rule, {
       ],
     },
     {
-      ...loadFixture("invalid/04", true),
+      ...loadFixture({
+        fixtureDirectory: "invalid/04",
+        hasOutputFile: true,
+      }),
       options: [
         {
           overridePrettierOption: {

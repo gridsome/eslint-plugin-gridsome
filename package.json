@@ -56,12 +56,14 @@
   },
   "dependencies": {
     "@typescript-eslint/experimental-utils": "^3.3.0",
+    "minimatch": "^3.0.4",
     "prettier": "^2.0.5",
     "vue-eslint-parser": "^7.1.0"
   },
   "devDependencies": {
     "@types/chai": "^4.2.14",
     "@types/eslint": "^7.2.6",
+    "@types/minimatch": "^3.0.3",
     "@types/mocha": "^8.2.0",
     "@types/prettier": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
@@ -84,7 +86,8 @@
     "vuepress": "^1.7.1"
   },
   "peerDependencies": {
-    "eslint": "^6.2.0 || ^7.0.0"
+    "eslint": "^6.2.0 || ^7.0.0",
+    "minimatch": "^3.0.4"
   },
   "engines": {
     "node": "^10.13.0 || ^12.13.0 || ^13.0.0 || >=14.0.0"
