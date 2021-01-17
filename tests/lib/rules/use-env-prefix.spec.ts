@@ -1,3 +1,4 @@
+import path from "path";
 import { RuleTester, loadFixtureCreator } from "../../util";
 
 import rule from "../../../lib/rules/use-env-prefix";
@@ -17,7 +18,7 @@ const loadFixture = loadFixtureCreator(
 tester.run("use-env-prefix", rule, {
   valid: [
     {
-      filename: "src/components/code.vue",
+      filename: path.join(process.cwd(), "src/components/code.vue"),
       ...loadFixture({
         fixtureDirectory: "valid/01",
       }),
@@ -29,7 +30,7 @@ tester.run("use-env-prefix", rule, {
       ],
     },
     {
-      filename: "src/client.js",
+      filename: path.join(process.cwd(), "src/client.js"),
       ...loadFixture({
         fixtureDirectory: "valid/02",
         filenames: {
@@ -46,7 +47,7 @@ tester.run("use-env-prefix", rule, {
   ],
   invalid: [
     {
-      filename: "src/components/code.vue",
+      filename: path.join(process.cwd(), "src/components/code.vue"),
       ...loadFixture({
         fixtureDirectory: "invalid/01",
       }),
@@ -63,7 +64,7 @@ tester.run("use-env-prefix", rule, {
       ],
     },
     {
-      filename: "src/client.js",
+      filename: path.join(process.cwd(), "src/client.js"),
       ...loadFixture({
         fixtureDirectory: "invalid/02",
         filenames: {
