@@ -1,3 +1,12 @@
+## [1.6.1](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.6.0...v1.6.1) (2021-01-17)
+
+
+### Bug Fixes
+
+* **use-env-prefix:** fix around treating filename ([#117](https://github.com/gridsome/eslint-plugin-gridsome/issues/117)) ([d25d1ae](https://github.com/gridsome/eslint-plugin-gridsome/commit/d25d1aea2e5c11e56ef871a1fd2b89ddbe849e7e)), closes [#116](https://github.com/gridsome/eslint-plugin-gridsome/issues/116)
+
+
+
 # [1.6.0](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.5.2...v1.6.0) (2021-01-17)
 
 
