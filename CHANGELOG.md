@@ -1,3 +1,12 @@
+## [1.6.2](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.6.1...v1.6.2) (2021-02-13)
+
+
+### Bug Fixes
+
+* **use-env-prefix:** consider that env file does not exist ([#119](https://github.com/gridsome/eslint-plugin-gridsome/issues/119)) ([6cd3b45](https://github.com/gridsome/eslint-plugin-gridsome/commit/6cd3b4586593a1e6e1abbed93d4cf52cf6eb0f33))
+
+
+
 ## [1.6.1](https://github.com/gridsome/eslint-plugin-gridsome/compare/v1.6.0...v1.6.1) (2021-01-17)
 
 
