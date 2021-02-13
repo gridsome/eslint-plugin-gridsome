@@ -44,6 +44,21 @@ tester.run("use-env-prefix", rule, {
         },
       ],
     },
+    {
+      filename: path.join(process.cwd(), "src/client.js"),
+      ...loadFixture({
+        fixtureDirectory: "valid/03",
+        filenames: {
+          code: "client.js",
+        },
+      }),
+      options: [
+        {
+          pathsForBrowserfile: ["src/**/*"],
+          envPath: "tests/lib/rules/fixtures/use-env-prefix/valid/03/.env",
+        },
+      ],
+    },
   ],
   invalid: [
     {

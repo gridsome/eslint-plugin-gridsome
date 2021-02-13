@@ -51,15 +51,20 @@ export = createRule<[Options], MessageIds>({
   create(context) {
     const path = getPathFromProjectRoot(context.getFilename(), process.cwd());
 
-    const pathsForBrowserfileOption = context.options[0]
-      ?.pathsForBrowserfile || ["src/**/*"];
-    const envPathOption = context.options[0]?.envPath || ".env";
+    const options = {
+      pathsForBrowserfile: context.options[0]?.pathsForBrowserfile || [
+        "src/**/*",
+      ],
+      envPath: context.options[0]?.envPath || ".env",
+    };
 
-    const isClientfile = pathsForBrowserfileOption.some((clientPath) =>
+    const isClientfile = options.pathsForBrowserfile.some((clientPath) =>
       minimatch(path, clientPath)
     );
 
-    const envSource = Fs.readFileSync(envPathOption, { encoding: "utf8" });
+    if (!Fs.existsSync(options.envPath)) return {};
+    const envSource = Fs.readFileSync(options.envPath, { encoding: "utf8" });
+
     const parsedEnvSource = new Env(envSource).parse();
 
     return {
