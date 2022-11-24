@@ -55,7 +55,7 @@
     ]
   },
   "dependencies": {
-    "@typescript-eslint/experimental-utils": "^3.3.0",
+    "@typescript-eslint/experimental-utils": "^5.44.0",
     "minimatch": "^3.0.4",
     "prettier": "^2.0.5",
     "vue-eslint-parser": "^7.1.0"
@@ -66,14 +66,14 @@
     "@types/minimatch": "^3.0.3",
     "@types/mocha": "^8.2.0",
     "@types/prettier": "^2.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.11.0",
-    "@typescript-eslint/parser": "^4.11.0",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
     "all-contributors-cli": "^6.19.0",
     "chai": "^4.2.0",
     "change-case": "^4.1.2",
     "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.0.0",
+    "eslint": "^8.0.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.0",
     "hygen": "^6.0.4",
@@ -86,11 +86,11 @@
     "vuepress": "^1.7.1"
   },
   "peerDependencies": {
-    "eslint": "^6.2.0 || ^7.0.0",
+    "eslint": "^6.0.0 || ^7.0.0 || ^8.0.0",
     "minimatch": "^3.0.4"
   },
   "engines": {
-    "node": "^10.13.0 || ^12.13.0 || ^13.0.0 || >=14.0.0"
+    "node": "^14.0.0 || ^16.0.0 || ^18.0.0"
   },
   "publishConfig": {
     "access": "public"

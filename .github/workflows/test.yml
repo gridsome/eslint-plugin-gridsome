@@ -8,8 +8,8 @@ jobs:
 
     strategy:
       matrix:
-        # Test with Node.js v10 (LTS), v12 (LTS), v13, and v14 (latest)
-        node-version: [10.x, 12.x, 13.x, 14.x]
+        # Test with Node.js v14 (LTS), v16 (LTS), and v18 (latest)
+        node-version: [14.x, 16.x, 18.x]
 
     steps:
       - uses: actions/checkout@v2
